@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.8.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.8.0" type="image/png" sizes="32x32"><meta name="description" content="合并两个有序数组                            解决思路       逆向双指针，从后往前比较两个数组的元素大小。大的填入应在的位置，然后指针前移，小的不作操作。                     代码       123456789101112131415161718192021&#x2F;&#x2F; 逆向双指针的方法var merge &#x3D; f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试算法题">
+<meta property="og:url" content="http://example.com/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="GaoNana&#39;s Blog">
+<meta property="og:description" content="合并两个有序数组                            解决思路       逆向双指针，从后往前比较两个数组的元素大小。大的填入应在的位置，然后指针前移，小的不作操作。                     代码       123456789101112131415161718192021&#x2F;&#x2F; 逆向双指针的方法var merge &#x3D; f">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/3d3e5dce452c7bb545719640281a0488bc37105ab9889359c9d9d79c194c9184.png">
+<meta property="og:image" content="http://example.com/images/f10b6a6f2ce89f0b2941de25cdfed619ce0d7bdd16dd9b8a4722361cfbfb3386.png">
+<meta property="og:image" content="http://example.com/images/1c543bade55ef7ba85f6117d46e6537cfc3df2a27b79572cd379ac4343cfd13b.png">
+<meta property="og:image" content="http://example.com/images/d918ce4ff18b67517cae8e2925b5c7841d9afeea292f7de999c24b7bc9c635ce.png">
+<meta property="article:published_time" content="2024-09-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-12T02:26:46.597Z">
+<meta property="article:author" content="GaoNana">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/3d3e5dce452c7bb545719640281a0488bc37105ab9889359c9d9d79c194c9184.png"><title>面试算法题 | GaoNana's Blog</title><link ref="canonical" href="http://example.com/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: true,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: {"colWidth":"220px","gapX":"10px"},
+  lazyload: false,
+  pjax: {"avoidBanner":false},
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Gao's Blog</div><div class="header-banner-info__subtitle">莫听穿林打叶声 何妨吟啸且徐行</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">面试算法题</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-12</span></span></div></header><div class="post-body">
+        <h2 id="合并两个有序数组">
+          <a href="#合并两个有序数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#合并两个有序数组" class="headerlink" title="合并两个有序数组"></a>合并两个有序数组</h2>
+      <p><img src="/../../images/3d3e5dce452c7bb545719640281a0488bc37105ab9889359c9d9d79c194c9184.png" alt="图 0"></p>
+
+        <h3 id="解决思路">
+          <a href="#解决思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3>
+      <p>逆向双指针，从后往前比较两个数组的元素大小。大的填入应在的位置，然后指针前移，小的不作操作。</p>
+
+        <h3 id="代码">
+          <a href="#代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码" class="headerlink" title="代码"></a>代码</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 逆向双指针的方法</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="keyword">function</span>(<span class="params">nums1, m, nums2, n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> p1 = m-<span class="number">1</span>,p2 = n-<span class="number">1</span>,p = m+n-<span class="number">1</span>  <span class="comment">//三个指针，第一个用来遍历数组1中的每个值。</span></span><br><span class="line">  <span class="comment">//第二个用来遍历数组2中的每一个值，第三个用来存数据，从数组1的最后一个位置开始。</span></span><br><span class="line">  <span class="keyword">while</span>(p1&gt;=<span class="number">0</span> &amp;&amp; p2&gt;=<span class="number">0</span>)&#123; <span class="comment">// 双指针，从两个数组的最后一个数开始，倒着比较值的大小。</span></span><br><span class="line">    <span class="keyword">if</span> (nums2[p2]&gt;=nums1[p1])&#123;</span><br><span class="line">      nums1[p] = nums2[p2]</span><br><span class="line">      p2--</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      nums1[p] = nums1[p1]</span><br><span class="line">      p1--</span><br><span class="line">    &#125;</span><br><span class="line">    p--</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(p2&gt;=<span class="number">0</span>)&#123;<span class="comment">//如果数组2中还有剩余的元素，全部放在数组1的前面</span></span><br><span class="line">    nums1[p] = nums2[p2]</span><br><span class="line">    p2--</span><br><span class="line">    p--</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="两数之和">
+          <a href="#两数之和" class="heading-link"><i class="fas fa-link"></i></a><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2>
+      <p><img src="/../../images/f10b6a6f2ce89f0b2941de25cdfed619ce0d7bdd16dd9b8a4722361cfbfb3386.png" alt="图 1"></p>
+
+        <h3 id="解题思路">
+          <a href="#解题思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3>
+      <p>使用字典,判断目标值减去当前值的结果是否，存在于字典中。</p>
+
+        <h3 id="代码-1">
+          <a href="#代码-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> twoSum = <span class="keyword">function</span>(<span class="params">nums, target</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">  <span class="comment">// 判断target-当前元素的结果是否存在于map中，如果存在返回下标</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (map.<span class="title function_">has</span>(target-nums[i]))&#123;</span><br><span class="line">      <span class="keyword">return</span> [map.<span class="title function_">get</span>(target-nums[i]),i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果不存在，设置当前元素为键，当前元素下表为值</span></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      map.<span class="title function_">set</span>(nums[i],i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="三数之和">
+          <a href="#三数之和" class="heading-link"><i class="fas fa-link"></i></a><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h2>
+      <p><img src="/../../images/1c543bade55ef7ba85f6117d46e6537cfc3df2a27b79572cd379ac4343cfd13b.png" alt="图 2"></p>
+
+        <h3 id="解决思路回溯算法：">
+          <a href="#解决思路回溯算法：" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决思路回溯算法：" class="headerlink" title="解决思路回溯算法："></a>解决思路回溯算法：</h3>
+      <p>1、回溯的三部曲，参数确定，确定终止条件，单层递归逻辑。提升效率要剪枝<br>2、双指针法：对数组进行排序，先确定第一个数字，然后使用双指针分别总数组的第一个和第最后一个开始，判断当前总和，综合大，右边指针前移，否者左边指针后移。</p>
+<p>去重逻辑：第一个数字的去重，和后面两个数字的去重。</p>
+
+        <h3 id="代码-2">
+          <a href="#代码-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> threeSum = <span class="keyword">function</span> (<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  nums = nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b) <span class="comment">//首先要进行排序</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.<span class="property">length</span>-<span class="number">2</span>; i++) &#123;  <span class="comment">//减2是因为求得是三个元素的和。</span></span><br><span class="line">    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span> <span class="comment">//a去重</span></span><br><span class="line">    <span class="keyword">let</span> left = i + <span class="number">1</span>,right = nums.<span class="property">length</span> - <span class="number">1</span> <span class="comment">//指定双指针</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">      <span class="keyword">let</span> sum = nums[i]+nums[left]+nums[right]</span><br><span class="line">      <span class="keyword">if</span> (sum&gt;<span class="number">0</span>) right--</span><br><span class="line">      <span class="keyword">if</span> (sum&lt;<span class="number">0</span>) left++</span><br><span class="line">      <span class="keyword">if</span>(sum===<span class="number">0</span>)&#123;</span><br><span class="line">        res.<span class="title function_">push</span>([nums[i],nums[left],nums[right]])</span><br><span class="line">        <span class="comment">//后两个数去重逻辑，如果指针指向下一个元素与当前相同，跳过该元素</span></span><br><span class="line">        <span class="keyword">while</span>(left&lt;right &amp;&amp; nums[left] === nums[left+<span class="number">1</span>]) left++</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right &amp;&amp; nums[right] === nums[right-<span class="number">1</span>]) right--</span><br><span class="line">        left++     <span class="comment">//忘记调整这两个了</span></span><br><span class="line">        right--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="反转链表">
+          <a href="#反转链表" class="heading-link"><i class="fas fa-link"></i></a><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h2>
+      <p><img src="/../../images/d918ce4ff18b67517cae8e2925b5c7841d9afeea292f7de999c24b7bc9c635ce.png" alt="图 3"></p>
+
+        <h3 id="自定义链表">
+          <a href="#自定义链表" class="heading-link"><i class="fas fa-link"></i></a><a href="#自定义链表" class="headerlink" title="自定义链表"></a>自定义链表</h3>
+      
+        <h3 id="解题代码">
+          <a href="#解题代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#解题代码" class="headerlink" title="解题代码"></a>解题代码</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseList = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> prev = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">let</span> cur = head</span><br><span class="line">  <span class="keyword">while</span>(cur)&#123;</span><br><span class="line">    <span class="comment">// 这一步我忘记了，没有把next的值保存下来，直接给cur.next赋值了</span></span><br><span class="line">    <span class="keyword">const</span> next = cur.<span class="property">next</span></span><br><span class="line">    cur.<span class="property">next</span> = prev</span><br><span class="line">    prev = cur</span><br><span class="line">    cur = next</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> prev <span class="comment">//最后一个cur是null，他前面一个才是第一个有值的节点</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="二叉树遍历">
+          <a href="#二叉树遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h2>
+      
+        <h2 id="排序算法">
+          <a href="#排序算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2>
+      
+        <h3 id="快速排序">
+          <a href="#快速排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3>
+      <p>其核心思想是分治，选择一个基准元素，将比基准小的元素放在左边，比基准大的元素放在右边。然后地柜对左右两个部分，分别进行快速排序。</p>
+<p>快速排序复杂度<br>平均时间复杂度（Onlogn）、最坏情况O(n^2)</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">quickSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="comment">//终止条件</span></span><br><span class="line">  <span class="keyword">if</span> (arr.<span class="property">length</span> &lt;= <span class="number">1</span>) <span class="keyword">return</span> arr</span><br><span class="line">  <span class="comment">//找基准,选择最后一个元素作为基准</span></span><br><span class="line">  <span class="keyword">let</span> std = arr.<span class="property">length</span> - <span class="number">1</span></span><br><span class="line">  <span class="comment">//用来存储左右两个数组</span></span><br><span class="line">  <span class="keyword">let</span> leftArr = [],</span><br><span class="line">    rightArr = []</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; std &amp;&amp; i != std; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr[i] &lt;= arr[std]) leftArr.<span class="title function_">push</span>(arr[i])</span><br><span class="line">    <span class="keyword">else</span> rightArr.<span class="title function_">push</span>(arr[i])</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//分别处理左右两个子数组</span></span><br><span class="line">  <span class="keyword">return</span> [...<span class="title function_">quickSort</span>(leftArr), arr[std], ...<span class="title function_">quickSort</span>(rightArr)]</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">quickSort</span>([<span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>,<span class="number">3</span>,<span class="number">80</span>,<span class="number">34</span>]))</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="选择排序">
+          <a href="#选择排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3>
+      
+        <h3 id="冒泡排序">
+          <a href="#冒泡排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3>
+      
+        <h3 id="插入排序">
+          <a href="#插入排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3>
+      
+        <h3 id="堆排序">
+          <a href="#堆排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3>
+      
+        <h3 id="归并排序">
+          <a href="#归并排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3>
+      <p>归并排序是另一种分治算法，它将数组递归地拆分为两个子数组，直到每个子数组只有一个元素。然后将这些子数组有序地合并，直到所有元素合并成一个有序数组。</p>
+<p>归并排序是一种稳定排序，而且它的最坏情况复杂度和平均复杂度都是 O(n log n)。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">GaoNana</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/">http://example.com/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2024/07/25/algrithm/%E5%8D%95%E8%B0%83%E6%A0%88/"><span class="paginator-prev__text">单调栈</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">
+          合并两个有序数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.</span> <span class="toc-text">
+          解决思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">
+          代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-number">2.</span> <span class="toc-text">
+          两数之和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">2.1.</span> <span class="toc-text">
+          解题思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">2.2.</span> <span class="toc-text">
+          代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="toc-number">3.</span> <span class="toc-text">
+          三数之和</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">
+          解决思路回溯算法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-number">3.2.</span> <span class="toc-text">
+          代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-number">4.</span> <span class="toc-text">
+          反转链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%93%BE%E8%A1%A8"><span class="toc-number">4.1.</span> <span class="toc-text">
+          自定义链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E4%BB%A3%E7%A0%81"><span class="toc-number">4.2.</span> <span class="toc-text">
+          解题代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="toc-number">5.</span> <span class="toc-text">
+          二叉树遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">
+          排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="toc-number">6.1.</span> <span class="toc-text">
+          快速排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="toc-number">6.2.</span> <span class="toc-text">
+          选择排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-number">6.3.</span> <span class="toc-text">
+          冒泡排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="toc-number">6.4.</span> <span class="toc-text">
+          插入排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F"><span class="toc-number">6.5.</span> <span class="toc-text">
+          堆排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="toc-number">6.6.</span> <span class="toc-text">
+          归并排序</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">GaoNana</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GnanaN/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/weixin_43562106" target="_blank" rel="noopener" data-popover="social.CSDN" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="mailto:nana_ga@126.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">67</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">21</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">51</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GaoNana</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v7.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+  var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-banner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
+  // 加载进度条的计时器
+  var loadingTimer = null;
+
+  // 重置页面 Y 方向上的滚动偏移量
+  document.addEventListener('pjax:send', function () {
+    $('.header-nav-menu').removeClass('show');
+    if (CONFIG.pjax && CONFIG.pjax.avoidBanner) {
+      $('html').velocity('scroll', {
+        duration: 500,
+        offset: $('#header').height(),
+        easing: 'easeInOutCubic'
+      });
+    }
+
+    var loadingBarWidth = 20;
+    var MAX_LOADING_WIDTH = 95;
+
+    $('.loading-bar').addClass('loading');
+    $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    clearInterval(loadingTimer);
+    loadingTimer = setInterval(function () {
+      loadingBarWidth += 3;
+      if (loadingBarWidth > MAX_LOADING_WIDTH) {
+        loadingBarWidth = MAX_LOADING_WIDTH;
+      }
+      $('.loading-bar__progress').css('width', loadingBarWidth + '%');
+    }, 500);
+  }, false);
+
+  window.addEventListener('pjax:complete', function () {
+    clearInterval(loadingTimer);
+    $('.loading-bar__progress').css('width', '100%');
+    $('.loading-bar').removeClass('loading');
+    setTimeout(function () {
+      $('.loading-bar__progress').css('width', '0');
+    }, 400);
+    $('link[rel=prefetch], script[data-pjax-rm]').each(function () {
+      $(this).remove();
+    });
+    $('script[data-pjax], #pjax-reload script').each(function () {
+      $(this).parent().append($(this).remove());
+    });
+
+    if (Stun.utils.pjaxReloadBoot) {
+      Stun.utils.pjaxReloadBoot();
+    }
+    if (Stun.utils.pjaxReloadScroll) {
+      Stun.utils.pjaxReloadScroll();
+    }
+    if (Stun.utils.pjaxReloadSidebar) {
+      Stun.utils.pjaxReloadSidebar();
+    }
+    if (false) {
+      if (Stun.utils.pjaxReloadHeader) {
+        Stun.utils.pjaxReloadHeader();
+      }
+      if (Stun.utils.pjaxReloadScrollIcon) {
+        Stun.utils.pjaxReloadScrollIcon();
+      }
+      if (Stun.utils.pjaxReloadLocalSearch) {
+        Stun.utils.pjaxReloadLocalSearch();
+      }
+    }
+  }, false);
+}, false);</script><div id="pjax-reload"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css"><script src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/copy-tex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'http://example.com/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (true || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script></div><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script></body></html>
