@@ -30,7 +30,154 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Gao's Blog</div><div class="header-banner-info__subtitle">莫听穿林打叶声 何妨吟啸且徐行</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/">面试算法题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Gao's Blog</div><div class="header-banner-info__subtitle">莫听穿林打叶声 何妨吟啸且徐行</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/20/devlopment/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">图片懒加载</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="图片懒加载">
+          <a href="#图片懒加载" class="heading-link"><i class="fas fa-link"></i></a><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h1>
+      
+        <h2 id="简介">
+          <a href="#简介" class="heading-link"><i class="fas fa-link"></i></a><a href="#简介" class="headerlink" title="简介"></a>简介</h2>
+      <ul>
+<li>图片懒加载是一种前端性能优化技术，它通过延迟非关键资源（如图片）的加载时机，直到这些资源即将被用户看到内或者经过一定的延迟后，才开始加载，从而减少初次页面加载的时间和数据使用量，提高用户体验。</li>
+<li>本文总结的图片懒加载技术依赖vue，并将其封装为一个插件</li>
+<li>支持组件可见或即将可见时懒加载</li>
+<li>支持加载真实组件前展示骨架组件，提高用户体验</li>
+</ul>
+
+        <h2 id="涉及的属性">
+          <a href="#涉及的属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#涉及的属性" class="headerlink" title="涉及的属性"></a>涉及的属性</h2>
+      
+        <h3 id="非响应式">
+          <a href="#非响应式" class="heading-link"><i class="fas fa-link"></i></a><a href="#非响应式" class="headerlink" title="非响应式"></a>非响应式</h3>
+      <p>1.timeout:</p>
+<ul>
+<li>类型：Number</li>
+<li>作用：指定延迟加载的时间（以毫秒为单位）。如果设置了这个属性，组件将在指定时间后初始化。</li>
+</ul>
+<p>2、tagName:</p>
+<ul>
+<li>类型：String</li>
+<li>默认值：’div’</li>
+<li>作用：指定包裹内容的 HTML 标签名称。默认是 div，可以根据需要更改为其他标签。</li>
+</ul>
+<p>3、viewport:</p>
+<ul>
+<li>类型：HTMLElement 或 Object</li>
+<li>默认值：null</li>
+<li>作用：指定视口元素，用于 IntersectionObserver。如果没有指定，默认是 null，表示使用浏览器的视口。</li>
+</ul>
+<p>4、threshold:</p>
+<ul>
+<li>类型：String</li>
+<li>默认值：’0px’</li>
+<li>作用：指定触发懒加载的阈值。可以设置为像素值或百分比，例如 ‘100px’ 或 ‘50%’。</li>
+</ul>
+<p>5、direction:</p>
+<ul>
+<li>类型：String</li>
+<li>默认值：’vertical’</li>
+<li>作用：指定滚动方向。可以是 ‘vertical’（垂直方向）或 ‘horizontal’（水平方向）。</li>
+</ul>
+<p>6、maxWaitingTime:</p>
+<ul>
+<li>类型：Number</li>
+<li>默认值：50</li>
+<li>作用：指定最大等待时间（以毫秒为单位），用于 requestAnimationFrame 回调，防止主线程卡顿。</li>
+</ul>
+<p>这些属性允许用户在使用 VueLazyComponent 时进行灵活配置，以满足不同的需求。</p>
+
+        <h3 id="响应式">
+          <a href="#响应式" class="heading-link"><i class="fas fa-link"></i></a><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h3>
+      <p>1、isInit:</p>
+<ul>
+<li>类型：Boolean</li>
+<li>默认值：false</li>
+<li>作用：表示组件是否已经初始化。当组件完成初始化时，这个值会被设置为 true。</li>
+</ul>
+<p>2、timer:</p>
+<ul>
+<li>类型：null 或 Number</li>
+<li>默认值：null</li>
+<li>作用：用于存储定时器的引用。如果设置了 timeout 属性，组件会在指定时间后初始化，这个定时器用于实现这个功能。</li>
+</ul>
+<p>3、io:</p>
+<ul>
+<li>类型：null 或 IntersectionObserver</li>
+<li>默认值：null</li>
+<li>作用：用于存储 IntersectionObserver 的实例。IntersectionObserver 用于检测组件是否进入视口，以便延迟加载内容。</li>
+</ul>
+<p>4、loading:</p>
+<ul>
+<li>类型：Boolean</li>
+<li>默认值：false</li>
+<li>作用：表示组件是否正在加载内容。当组件开始加载内容时，这个值会被设置为 true。</li>
+</ul>
+<p>这些数据属性用于管理组件的状态和行为。通过响应式的数据属性，Vue.js 可以在数据变化时自动更新视图，从而实现动态和交互式的用户界面。</p>
+
+        <h2 id="功能详解">
+          <a href="#功能详解" class="heading-link"><i class="fas fa-link"></i></a><a href="#功能详解" class="headerlink" title="功能详解"></a>功能详解</h2>
+      
+        <h3 id="懒加载内容">
+          <a href="#懒加载内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#懒加载内容" class="headerlink" title="懒加载内容"></a>懒加载内容</h3>
+      <ul>
+<li><p>IntersectionObserver是浏览器内置API，用于异步观察一个目标元素与其祖先元素或顶级文档视口（viewport）交叉状态的变化。它可以用于实现懒加载、无限滚动、广告曝光监测等功能。</p>
+</li>
+<li><p>IntersectionObserver 构造函数用于创建一个新的 IntersectionObserver 实例。它接受两个参数：</p>
+<ul>
+<li>回调函数（callback）：当目标元素的可见性发生变化时，这个回调函数会被调用。</li>
+<li>选项对象（options）：用于配置 IntersectionObserver 的行为。<br>可选参数，用于配置 IntersectionObserver 的行为。包含以下属性：<ul>
+<li>root：指定用作视口的元素，必须是目标元素的祖先元素。默认是浏览器的视口。</li>
+<li>rootMargin：用于扩展或缩小 root 元素的边界，类似于 CSS 的 margin 属性。可以使用像素值或百分比。</li>
+<li>threshold：一个数值或数值数组，表示目标元素的可见比例达到这些值时，回调函数会被触发。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="骨架展示">
+          <a href="#骨架展示" class="heading-link"><i class="fas fa-link"></i></a><a href="#骨架展示" class="headerlink" title="骨架展示"></a>骨架展示</h3>
+      <p>模板中的条件渲染：</p>
+<ul>
+<li>使用 v-if 和 v-else-if 指令根据 isInit 状态渲染实际内容或骨架屏。</li>
+<li>isInit 为 false 时显示骨架屏，为 true 时显示实际内容。</li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">transition-group</span> <span class="attr">:tag</span>=<span class="string">&quot;tagName&quot;</span> <span class="attr">name</span>=<span class="string">&quot;lazy-component&quot;</span> <span class="attr">style</span>=<span class="string">&quot;position: relative;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">before-enter</span>=<span class="string">&quot;(el) =&gt; $emit(&#x27;before-enter&#x27;, el)&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">before-leave</span>=<span class="string">&quot;(el) =&gt; $emit(&#x27;before-leave&#x27;, el)&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">after-enter</span>=<span class="string">&quot;(el) =&gt; $emit(&#x27;after-enter&#x27;, el)&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    @<span class="attr">after-leave</span>=<span class="string">&quot;(el) =&gt; $emit(&#x27;after-leave&#x27;, el)&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">  &gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;isInit&quot;</span> <span class="attr">key</span>=<span class="string">&quot;component&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">:loading</span>=<span class="string">&quot;loading&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;$slots.skeleton&quot;</span> <span class="attr">key</span>=<span class="string">&quot;skeleton&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;skeleton&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span> <span class="attr">key</span>=<span class="string">&quot;loading&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">transition-group</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="过渡动画">
+          <a href="#过渡动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#过渡动画" class="headerlink" title="过渡动画"></a>过渡动画</h3>
+      <p>transition-group：</p>
+<ul>
+<li>使用 transition-group 包裹内容，实现内容切换时的过渡动画。</li>
+<li>通过 @before-enter、@before-leave、@after-enter 和 @after-leave 事件触发父组件的相应事件。</li>
+</ul>
+
+        <h3 id="事件通知">
+          <a href="#事件通知" class="heading-link"><i class="fas fa-link"></i></a><a href="#事件通知" class="headerlink" title="事件通知"></a>事件通知</h3>
+      <p>在组件生命周期的不同阶段触发事件，通知父组件。</p>
+
+        <h2 id="逻辑">
+          <a href="#逻辑" class="heading-link"><i class="fas fa-link"></i></a><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2>
+      <ul>
+<li><p><strong>首先搞清楚，这里的懒加载是指以显示骨架内容代替真实数据，，等到有需要的时候再加载真实数据。</strong></p>
+</li>
+<li><p>在视口加载和超过设定时长自动加载，两者通过timeout属性决定，timeout为true使用延时加载，否则使用视口加载模式</p>
+</li>
+<li><p><strong>初始化是指加载真实数据的组件，即将loading指改为true。</strong></p>
+</li>
+<li><p>在挂载时，如果timeout值为加假，说明要使用视口交叉来懒加载图片。需要初始化视口交叉监视API：IntersectionObserver</p>
+</li>
+<li><p>在创建阶段，如果指定timeout则无论可见与否都是在timeout之后初始化</p>
+</li>
+<li><p>销毁：在组件销毁前取消观察</p>
+</li>
+<li><p>然后这里还定义了一些自定义函数，供插件使用者监听组件的状况。</p>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">大文件续传</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-20</span></span></div></header><div class="post-body"><div class="post-excerpt"></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/18/algrithm/%E9%9D%A2%E8%AF%95%E6%89%8B%E6%92%95%E5%89%8D%E7%AB%AF/">面试算法题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-18</span></span></div></header><div class="post-body"><div class="post-excerpt"></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/10/algrithm/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%AE%97%E6%B3%95%E9%A2%98%E6%B1%87%E6%80%BB/">面试算法题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-18</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="双指针系列">
+          <a href="#双指针系列" class="heading-link"><i class="fas fa-link"></i></a><a href="#双指针系列" class="headerlink" title="双指针系列"></a>双指针系列</h1>
+      
         <h2 id="合并两个有序数组">
           <a href="#合并两个有序数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#合并两个有序数组" class="headerlink" title="合并两个有序数组"></a>合并两个有序数组</h2>
       <p><img src="/../../images/3d3e5dce452c7bb545719640281a0488bc37105ab9889359c9d9d79c194c9184.png" alt="图 0"></p>
@@ -43,17 +190,60 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
           <a href="#代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码" class="headerlink" title="代码"></a>代码</h3>
       <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 逆向双指针的方法</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="keyword">function</span>(<span class="params">nums1, m, nums2, n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> p1 = m-<span class="number">1</span>,p2 = n-<span class="number">1</span>,p = m+n-<span class="number">1</span>  <span class="comment">//三个指针，第一个用来遍历数组1中的每个值。</span></span><br><span class="line">  <span class="comment">//第二个用来遍历数组2中的每一个值，第三个用来存数据，从数组1的最后一个位置开始。</span></span><br><span class="line">  <span class="keyword">while</span>(p1&gt;=<span class="number">0</span> &amp;&amp; p2&gt;=<span class="number">0</span>)&#123; <span class="comment">// 双指针，从两个数组的最后一个数开始，倒着比较值的大小。</span></span><br><span class="line">    <span class="keyword">if</span> (nums2[p2]&gt;=nums1[p1])&#123;</span><br><span class="line">      nums1[p] = nums2[p2]</span><br><span class="line">      p2--</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      nums1[p] = nums1[p1]</span><br><span class="line">      p1--</span><br><span class="line">    &#125;</span><br><span class="line">    p--</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span>(p2&gt;=<span class="number">0</span>)&#123;<span class="comment">//如果数组2中还有剩余的元素，全部放在数组1的前面</span></span><br><span class="line">    nums1[p] = nums2[p2]</span><br><span class="line">    p2--</span><br><span class="line">    p--</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
 
+        <h2 id="最长无重复子串">
+          <a href="#最长无重复子串" class="heading-link"><i class="fas fa-link"></i></a><a href="#最长无重复子串" class="headerlink" title="最长无重复子串"></a>最长无重复子串</h2>
+      <p><img src="/../../images/e1ca3a01738ca9738272adeefd50a1c7cddc915bbd5b141ab5e64808c2806e96.png" alt="图 5"></p>
+
+        <h3 id="解题思路">
+          <a href="#解题思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3>
+      <p>滑动窗口</p>
+<ul>
+<li>1、使用left和right两个指针，分别表示滑动窗口的左右边界，初始时都指向字符串的开头。</li>
+<li>2、使用一个哈希表（或者数组）来记录字符是否出现过以及字符出现的位置。</li>
+<li>3、不断移动右指针 right，每次移动时判断当前字符是否出现过：<ul>
+<li>如果当前字符已经出现过，并且在当前窗口内（即其位置大于等于 left），则更新 left 指针的位置为该字符上次出现的位置的下一个位置。</li>
+<li>如果当前字符没有出现过，或者虽然出现过但不在当前窗口内，则更新最长子字符串的长度。</li>
+</ul>
+</li>
+<li>不断更新最长子字符串的长度，并返回结果。</li>
+</ul>
+
+        <h3 id="代码-1">
+          <a href="#代码-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lengthOfLongestSubstring = <span class="keyword">function</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> l=<span class="number">0</span>,r=<span class="number">0</span>,max=<span class="number">0</span></span><br><span class="line">  <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">  <span class="keyword">while</span>(r&lt;s.<span class="property">length</span>)&#123;</span><br><span class="line">    <span class="comment">//判断map的记录中，这个字符的值是否在滑动窗口内</span></span><br><span class="line">    <span class="keyword">if</span> (map.<span class="title function_">has</span>(s[r]) &amp;&amp; map.<span class="title function_">get</span>(s[r]) &gt;= l) &#123;</span><br><span class="line">      <span class="comment">//如果在窗口内l指针指向当前记录值的后一位</span></span><br><span class="line">      l = map.<span class="title function_">get</span>(s[r])+<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果map中没有当前字符得记录或者有记录但是不在滑动窗口范围内</span></span><br><span class="line">    map.<span class="title function_">set</span>(s[r], r)</span><br><span class="line">    max = <span class="title class_">Math</span>.<span class="title function_">max</span>(max, r - l + <span class="number">1</span>)</span><br><span class="line">    r++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> max</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="判断子序列">
+          <a href="#判断子序列" class="heading-link"><i class="fas fa-link"></i></a><a href="#判断子序列" class="headerlink" title="判断子序列"></a>判断子序列</h2>
+      <p><img src="/../../images/a9479004f8982e479db91a305f90eb315c0bb64d5e8d87b28a7b71b2d90f59a3.png" alt="图 6"></p>
+
+        <h3 id="解题思路-1">
+          <a href="#解题思路-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3>
+      <ul>
+<li>初始化指针i，j分别指向字符串是，和t的起始位置；其中s是子串，t是较长的字符串</li>
+<li>遍历比较s[i]和t[j]的情况<ul>
+<li>如果s[i]&#x3D;&#x3D;t[j]，那么指向子串的指针+1，即i++；且j++</li>
+<li>如果不想等j++</li>
+</ul>
+</li>
+<li>判断子序列：如果 i 移动到了 s 的末尾，则说明 s 是 t 的子序列，返回 true；否则返回 false。</li>
+</ul>
+
+        <h3 id="代码-2">
+          <a href="#代码-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isSubsequence = <span class="keyword">function</span>(<span class="params">s, t</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> i=<span class="number">0</span>,j=<span class="number">0</span></span><br><span class="line">  <span class="comment">//处理两个字符串都是空字符串的情况</span></span><br><span class="line">  <span class="keyword">if</span> (s==t) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="keyword">while</span> (j&lt;t.<span class="property">length</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (s[i]===t[j]) i++</span><br><span class="line">    j++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (i==s.<span class="property">length</span>) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
 
         <h2 id="两数之和">
           <a href="#两数之和" class="heading-link"><i class="fas fa-link"></i></a><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2>
       <p><img src="/../../images/f10b6a6f2ce89f0b2941de25cdfed619ce0d7bdd16dd9b8a4722361cfbfb3386.png" alt="图 1"></p>
 
-        <h3 id="解题思路">
-          <a href="#解题思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3>
+        <h3 id="解题思路-2">
+          <a href="#解题思路-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h3>
       <p>使用字典,判断目标值减去当前值的结果是否，存在于字典中。</p>
 
-        <h3 id="代码-1">
-          <a href="#代码-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3>
+        <h3 id="代码-3">
+          <a href="#代码-3" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3>
       <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> twoSum = <span class="keyword">function</span>(<span class="params">nums, target</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">  <span class="comment">// 判断target-当前元素的结果是否存在于map中，如果存在返回下标</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (map.<span class="title function_">has</span>(target-nums[i]))&#123;</span><br><span class="line">      <span class="keyword">return</span> [map.<span class="title function_">get</span>(target-nums[i]),i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果不存在，设置当前元素为键，当前元素下表为值</span></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      map.<span class="title function_">set</span>(nums[i],i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 
@@ -66,8 +256,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
       <p>1、回溯的三部曲，参数确定，确定终止条件，单层递归逻辑。提升效率要剪枝<br>2、双指针法：对数组进行排序，先确定第一个数字，然后使用双指针分别总数组的第一个和第最后一个开始，判断当前总和，综合大，右边指针前移，否者左边指针后移。</p>
 <p>去重逻辑：第一个数字的去重，和后面两个数字的去重。</p>
 
-        <h3 id="代码-2">
-          <a href="#代码-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3>
+        <h3 id="代码-4">
+          <a href="#代码-4" class="heading-link"><i class="fas fa-link"></i></a><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3>
       <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> threeSum = <span class="keyword">function</span> (<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  nums = nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b) <span class="comment">//首先要进行排序</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.<span class="property">length</span>-<span class="number">2</span>; i++) &#123;  <span class="comment">//减2是因为求得是三个元素的和。</span></span><br><span class="line">    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i - <span class="number">1</span>]) <span class="keyword">continue</span> <span class="comment">//a去重</span></span><br><span class="line">    <span class="keyword">let</span> left = i + <span class="number">1</span>,right = nums.<span class="property">length</span> - <span class="number">1</span> <span class="comment">//指定双指针</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">      <span class="keyword">let</span> sum = nums[i]+nums[left]+nums[right]</span><br><span class="line">      <span class="keyword">if</span> (sum&gt;<span class="number">0</span>) right--</span><br><span class="line">      <span class="keyword">if</span> (sum&lt;<span class="number">0</span>) left++</span><br><span class="line">      <span class="keyword">if</span>(sum===<span class="number">0</span>)&#123;</span><br><span class="line">        res.<span class="title function_">push</span>([nums[i],nums[left],nums[right]])</span><br><span class="line">        <span class="comment">//后两个数去重逻辑，如果指针指向下一个元素与当前相同，跳过该元素</span></span><br><span class="line">        <span class="keyword">while</span>(left&lt;right &amp;&amp; nums[left] === nums[left+<span class="number">1</span>]) left++</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right &amp;&amp; nums[right] === nums[right-<span class="number">1</span>]) right--</span><br><span class="line">        left++     <span class="comment">//忘记调整这两个了</span></span><br><span class="line">        right--</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
 
 
@@ -83,9 +273,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
       <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseList = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> prev = <span class="literal">null</span></span><br><span class="line">  <span class="keyword">let</span> cur = head</span><br><span class="line">  <span class="keyword">while</span>(cur)&#123;</span><br><span class="line">    <span class="comment">// 这一步我忘记了，没有把next的值保存下来，直接给cur.next赋值了</span></span><br><span class="line">    <span class="keyword">const</span> next = cur.<span class="property">next</span></span><br><span class="line">    cur.<span class="property">next</span> = prev</span><br><span class="line">    prev = cur</span><br><span class="line">    cur = next</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> prev <span class="comment">//最后一个cur是null，他前面一个才是第一个有值的节点</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
 
 
-        <h2 id="二叉树遍历">
-          <a href="#二叉树遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h2>
-      
+
         <h2 id="排序算法">
           <a href="#排序算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2>
       
@@ -98,21 +286,78 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
 
         <h3 id="选择排序">
           <a href="#选择排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3>
-      
+      <p>选择最大的数，放在数组的最右边，然后再选择第二大的数，放在数组的右边第二的位置，以此类推。</p>
+<p>选择排序复杂度<br>平均时间复杂度（Onlogn）、最坏情况O(n^2)</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">selectSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> n = arr.<span class="property">length</span>-<span class="number">1</span></span><br><span class="line">  <span class="comment">// 从后往前排好arr的顺序，所以遍历从后往前</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=n;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">    <span class="keyword">let</span> maxIndex = i</span><br><span class="line">    <span class="comment">// 将没排好序的过一遍</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;=i;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[j]&gt;arr[maxIndex]) maxIndex = j</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (maxIndex != i)&#123;</span><br><span class="line">      [arr[maxIndex],arr[i]] = [arr[i],arr[maxIndex]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
         <h3 id="冒泡排序">
           <a href="#冒泡排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3>
-      
+      <p>冒泡排序通过重复遍历要排序的列表，每次比较相邻的两个元素。如果顺序不正确，就交换它们的位置。这个过程会重复直到整个列表有序。</p>
+<p>每一轮遍历会将一个最大的元素“冒泡”到末尾。</p>
+<p>复杂度：时间复杂度：O(n²)</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">populeSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> len = arr.<span class="property">length</span>-<span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="comment">// 每一轮遍历都会将一个最大的元素“冒泡”到末尾，所以下一轮遍历就不用再遍历最后一个元素</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;len-<span class="number">1</span>;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>]) [arr[j],arr[j+<span class="number">1</span>]] = [arr[j+<span class="number">1</span>],arr[j]]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
         <h3 id="插入排序">
           <a href="#插入排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3>
-      
-        <h3 id="堆排序">
-          <a href="#堆排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3>
-      
+      <p>插入排序将数组划分为已排序和未排序部分，从未排序部分取出元素，并将其插入到已排序部分的适当位置。这个过程会反复执行，直到所有元素都被插入到正确的位置。</p>
+<p>复杂度：时间复杂度：O(n²)  最好情况（数组本身有序）：O(n)</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">insertSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="comment">//有序无序两部分，从无序的数据中一次拿数据，插入到有序部分</span></span><br><span class="line">  <span class="keyword">let</span> len = arr.<span class="property">length</span></span><br><span class="line">  <span class="comment">// 第一个元素是有序部分，从第二个数据开始拿数据</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="keyword">let</span> curr = arr[i]</span><br><span class="line">    <span class="keyword">let</span> j=i-<span class="number">1</span></span><br><span class="line">    <span class="comment">//从有序数据的后面开始往前遍历，直到找到合适插入的位置</span></span><br><span class="line">    <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; curr&lt;arr[j])&#123;</span><br><span class="line">      <span class="comment">// 给将来要插入元素的地方腾位置</span></span><br><span class="line">      arr[j+<span class="number">1</span>] = arr[j]</span><br><span class="line">      j--</span><br><span class="line">    &#125;</span><br><span class="line">    arr[j+<span class="number">1</span>] = curr</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
         <h3 id="归并排序">
           <a href="#归并排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3>
       <p>归并排序是另一种分治算法，它将数组递归地拆分为两个子数组，直到每个子数组只有一个元素。然后将这些子数组有序地合并，直到所有元素合并成一个有序数组。</p>
 <p>归并排序是一种稳定排序，而且它的最坏情况复杂度和平均复杂度都是 O(n log n)。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/25/algrithm/%E5%8D%95%E8%B0%83%E6%A0%88/">单调栈</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">mergeSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">  <span class="comment">//终止条件，就是arr长度</span></span><br><span class="line">  <span class="keyword">if</span> (arr.<span class="property">length</span>&lt;=<span class="number">1</span>) <span class="keyword">return</span> arr</span><br><span class="line">  <span class="comment">//首先将数组分为二部分</span></span><br><span class="line">  <span class="keyword">let</span> mid = <span class="title class_">Math</span>.<span class="title function_">floor</span>(arr.<span class="property">length</span>/<span class="number">2</span>)</span><br><span class="line">  <span class="keyword">let</span> leftArr = arr.<span class="title function_">slice</span>(<span class="number">0</span>,mid)</span><br><span class="line">  <span class="keyword">let</span> rightArr = arr.<span class="title function_">slice</span>(mid)</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">merge</span>(<span class="title function_">mergeSort</span>(leftArr),<span class="title function_">mergeSort</span>(rightArr))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">merge</span>(<span class="params">left,right</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> result =[]</span><br><span class="line">  <span class="keyword">let</span> i=<span class="number">0</span>,j=<span class="number">0</span></span><br><span class="line">  <span class="keyword">while</span>(i&lt;left.<span class="property">length</span> &amp;&amp; j&lt;right.<span class="property">length</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (left[i]&lt;right[j])&#123;</span><br><span class="line">      result.<span class="title function_">push</span>(left[i])</span><br><span class="line">      i++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      result.<span class="title function_">push</span>(right[j])</span><br><span class="line">      j++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result.<span class="title function_">concat</span>(left.<span class="title function_">slice</span>(i)).<span class="title function_">concat</span>(right.<span class="title function_">slice</span>(j))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="堆排序">
+          <a href="#堆排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3>
+      <p>堆排序利用了堆这种数据结构。堆是一种特殊的完全二叉树，分为大顶堆和小顶堆。堆排序的核心思想是：首先将数组构造成一个最大堆，然后依次将堆顶元素（最大值）与最后一个元素交换，再将剩下的元素重新调整为堆，直到排序完成。</p>
+<p>复杂度：时间复杂度：O(n log n)</p>
+
+        <h2 id="二叉树系列">
+          <a href="#二叉树系列" class="heading-link"><i class="fas fa-link"></i></a><a href="#二叉树系列" class="headerlink" title="二叉树系列"></a>二叉树系列</h2>
+      
+        <h3 id="层序遍历">
+          <a href="#层序遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3>
+      
+        <h3 id="前序遍历">
+          <a href="#前序遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h3>
+      
+        <h4 id="递归法">
+          <a href="#递归法" class="heading-link"><i class="fas fa-link"></i></a><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> preorderTraversal = <span class="keyword">function</span> (<span class="params">root</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> res = []</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">preorder</span> = (<span class="params">rt</span>)=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span> (!rt) <span class="keyword">return</span></span><br><span class="line">    res.<span class="title function_">push</span>(rt.<span class="property">val</span>)</span><br><span class="line">    <span class="title function_">preorder</span>(rt.<span class="property">left</span>)</span><br><span class="line">    <span class="title function_">preorder</span>(rt.<span class="property">right</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">preorder</span>(root)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="迭代法">
+          <a href="#迭代法" class="heading-link"><i class="fas fa-link"></i></a><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> preorderTraversal = <span class="keyword">function</span> (<span class="params">root</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  <span class="keyword">if</span> (!root) <span class="keyword">return</span> res   <span class="comment">// 应对空二叉树</span></span><br><span class="line">  <span class="keyword">let</span> queue = [root]</span><br><span class="line">  <span class="keyword">while</span>(queue.<span class="property">length</span>)&#123;</span><br><span class="line">    <span class="comment">//每次从队列里去一个节点，把该节点的值添加到result，</span></span><br><span class="line">    <span class="keyword">let</span> cur = queue.<span class="title function_">pop</span>()</span><br><span class="line">    res.<span class="title function_">push</span>(cur.<span class="property">val</span>) <span class="comment">//该节点的右孩子和左孩子依次加入节点，</span></span><br><span class="line">    <span class="keyword">if</span> (cur.<span class="property">right</span>) queue.<span class="title function_">push</span>(cur.<span class="property">right</span>) <span class="comment">//等到下一轮，就会分别依次遍历左孩子和有孩子了</span></span><br><span class="line">    <span class="keyword">if</span> (cur.<span class="property">left</span>) queue.<span class="title function_">push</span>(cur.<span class="property">left</span>)</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="后序遍历">
+          <a href="#后序遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3>
+      
+        <h4 id="递归法-1">
+          <a href="#递归法-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#递归法-1" class="headerlink" title="递归法"></a>递归法</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> postorderTraversal = <span class="keyword">function</span> (<span class="params">root</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">postorder</span> = (<span class="params">rt</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (!rt) <span class="keyword">return</span>    <span class="comment">//不要忘了这个条件</span></span><br><span class="line">    <span class="title function_">postorder</span>(rt.<span class="property">left</span>)</span><br><span class="line">    <span class="title function_">postorder</span>(rt.<span class="property">right</span>)</span><br><span class="line">    res.<span class="title function_">push</span>(rt.<span class="property">val</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">postorder</span>(root)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="迭代法-1">
+          <a href="#迭代法-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#迭代法-1" class="headerlink" title="迭代法"></a>迭代法</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+        <h3 id="中序遍历">
+          <a href="#中序遍历" class="heading-link"><i class="fas fa-link"></i></a><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3>
+      
+        <h4 id="递归法-2">
+          <a href="#递归法-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#递归法-2" class="headerlink" title="递归法"></a>递归法</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inorderTraversal = <span class="keyword">function</span> (<span class="params">root</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res =[]</span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">inorder</span> = (<span class="params">rt</span>)=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span> (!rt) <span class="keyword">return</span></span><br><span class="line">    rt.<span class="property">left</span> &amp;&amp; <span class="title function_">inorder</span>(rt.<span class="property">left</span>)</span><br><span class="line">    res.<span class="title function_">push</span>(rt.<span class="property">val</span>)</span><br><span class="line">    rt.<span class="property">right</span> &amp;&amp; <span class="title function_">inorder</span>(rt.<span class="property">right</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">inorder</span>(root)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="迭代法-2">
+          <a href="#迭代法-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#迭代法-2" class="headerlink" title="迭代法"></a>迭代法</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inorderTraversal = <span class="keyword">function</span> (<span class="params">root</span>) &#123;</span><br><span class="line">  <span class="comment">// 入栈:左-&gt;右</span></span><br><span class="line">  <span class="comment">// 出栈:左 中 右</span></span><br><span class="line">  <span class="keyword">let</span> res = []</span><br><span class="line">  <span class="keyword">const</span> stack = []</span><br><span class="line">  <span class="keyword">if</span> (root) stack.<span class="title function_">push</span>(root)</span><br><span class="line">  <span class="keyword">while</span> (stack.<span class="property">length</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> node = stack.<span class="title function_">pop</span>()</span><br><span class="line">    <span class="keyword">if</span> (!node) &#123;</span><br><span class="line">      res.<span class="title function_">push</span>(stack.<span class="title function_">pop</span>().<span class="property">val</span>)</span><br><span class="line">      <span class="keyword">continue</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (node.<span class="property">right</span>) stack.<span class="title function_">push</span>(node.<span class="property">right</span>) <span class="comment">// 右</span></span><br><span class="line">    stack.<span class="title function_">push</span>(node) <span class="comment">// 中</span></span><br><span class="line">    stack.<span class="title function_">push</span>(<span class="literal">null</span>)</span><br><span class="line">    <span class="keyword">if</span> (node.<span class="property">left</span>) stack.<span class="title function_">push</span>(node.<span class="property">left</span>) <span class="comment">// 左</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/25/algrithm/%E5%8D%95%E8%B0%83%E6%A0%88/">单调栈</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-26</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="单调栈">
           <a href="#单调栈" class="heading-link"><i class="fas fa-link"></i></a><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1>
       
@@ -583,251 +828,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
 <li>3、初始化：</li>
 <li>遍历顺序，i倒序，j正序</li>
 </ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> longestPalindromeSubseq = <span class="keyword">function</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = s.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    dp[i][i] =<span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=n-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=i+<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (i==j) dp[i][j] = <span class="number">1</span></span><br><span class="line">      <span class="keyword">if</span> (s[i]==s[j]) dp[i][j] = dp[i+<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">2</span></span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i+<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[<span class="number">0</span>][n-<span class="number">1</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/15/algrithm/%E5%85%B6%E4%BB%96%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%A2%98%E7%9B%AE/">编辑距离</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-15</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-17</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="编辑距离类问题">
-          <a href="#编辑距离类问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#编辑距离类问题" class="headerlink" title="编辑距离类问题"></a>编辑距离类问题</h1>
-      
-        <h2 id="判断子序列">
-          <a href="#判断子序列" class="heading-link"><i class="fas fa-link"></i></a><a href="#判断子序列" class="headerlink" title="判断子序列"></a>判断子序列</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/is-subsequence/description/">https://leetcode.cn/problems/is-subsequence/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/3d3ef41aea313b4447b3fdb56d442739f95e750b531eb9eab2fa1bf37ccbee3a.png" alt="图 6"></p>
-<p><strong>思路</strong><br>这题和之前的最长公共子序列有什么关系呢？<br>关系在于，这题的最长公共子序列长度和S1的长度相等说明有关系。</p>
-<p><strong>这也是编辑距离的入门题目</strong>，下面是编辑距离的基本思路</p>
-<ul>
-<li>1、二维dp数组，dp[i][j]，以i-1结尾的s1和以j-1结尾的s2的最长公共子序列。</li>
-<li>2、递推公式：<ul>
-<li>if (s1[i-1]&#x3D;&#x3D;s2[i-2]) dp[i-1][j-1]+1;</li>
-<li>else dp[i][j] &#x3D; max(dp[i-1][j],dp[i][j-1])</li>
-</ul>
-</li>
-<li>3、初始化：均为0</li>
-<li>4、遍历顺序：</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isSubsequence = <span class="keyword">function</span>(<span class="params">s, t</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = s.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = t.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(s[i-<span class="number">1</span>]==t[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (dp[n][m] == n) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h2 id="不同的子序列">
-          <a href="#不同的子序列" class="heading-link"><i class="fas fa-link"></i></a><a href="#不同的子序列" class="headerlink" title="不同的子序列"></a>不同的子序列</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/distinct-subsequences/description/">https://leetcode.cn/problems/distinct-subsequences/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/c781f811d08d55345f5043dec96303ff6f4a132f5affc87dd1ec523a0ce7d646.png" alt="图 3"></p>
-<p><strong>思路</strong><br>这道题目如果不是子序列，而是要求连续序列的，那就可以考虑用KMP。</p>
-<p>这道题目相对于72. 编辑距离，简单了不少，因为本题相当于只有删除操作，不用考虑替换增加之类的。</p>
-<p><strong>这道题可以理解为怎么删除元素可以由s变为t；</strong></p>
-<ul>
-<li>1、二维dp数组，dp[i][j]以i-1为结尾的s中以j-1为结尾的t的个数</li>
-<li>2、递推公式：<ul>
-<li>if (s[i-1]&#x3D;&#x3D;t[j-1]) dp[i][j] &#x3D; dp[i-1][j-1] +dp[i-1][j],使用s[i-1]这个元素+不使用s[i-1]这个元素</li>
-<li>else dp[i][j] &#x3D; dp[i-1][j],模拟删除当前元素，也就是不考录当前的元素。</li>
-</ul>
-</li>
-<li>3、初始化：<ul>
-<li><code>dp[i][0] = 1</code>(); t是空字符串的话，把s中元素全部删除可以得到t</li>
-<li><code>dp[0][j] = 0</code>; s为空字符串，t不可能出现在s中，所以未0</li>
-<li><code>dp[0][0]= 1</code>; s和t都为空字符串的话，只有一种可能</li>
-</ul>
-</li>
-<li>4、遍历顺序：</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numDistinct = <span class="keyword">function</span>(<span class="params">s, t</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = s.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = t.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=n;i++) &#123;dp[i][<span class="number">0</span>]=<span class="number">1</span>&#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="comment">//相等，可以选择使用s[i-1]或者不使用s[i-1]</span></span><br><span class="line">      <span class="keyword">if</span> (s[i-<span class="number">1</span>]==t[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + dp[i-<span class="number">1</span>][j]</span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = dp[i-<span class="number">1</span>][j]  <span class="comment">//不相等说明s[i-1]用不了得删掉。</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n][m]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h2 id="两个字符串的删除操作">
-          <a href="#两个字符串的删除操作" class="heading-link"><i class="fas fa-link"></i></a><a href="#两个字符串的删除操作" class="headerlink" title="两个字符串的删除操作"></a>两个字符串的删除操作</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/delete-operation-for-two-strings/description/">https://leetcode.cn/problems/delete-operation-for-two-strings/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/76ca37b36905bf908fcc891bd48b17aeeb536531c574813a02c377627771591f.png" alt="图 4"></p>
-<p><strong>思路1</strong><br>求出最长公共子序列，然后用n+m-2x，n,m,s分别表示字符串1、字符串2和最长公共子字符串的长度。</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minDistance = <span class="keyword">function</span>(<span class="params">word1, word2</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = word1.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = word2.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (word1[i-<span class="number">1</span>] == word2[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n+m-<span class="number">2</span>*dp[n][m]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-<p><strong>思路2</strong></p>
-<ul>
-<li>1、二维dp数组，dp[i][j]以i-1为结尾的word1和以j-1为结尾的word2相同需要的最少操作。</li>
-<li>2、递推公式：始终记得dp数组的含义<ul>
-<li>if (word1[i-1] &#x3D;&#x3D; word2[i-1]) dp[i][j] &#x3D; dp[i-1][j-1]，如果相等说明不需要操作。</li>
-<li>else dp[i][j] &#x3D; min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+2)</li>
-<li>由于dp[i][j-1]&#x3D; dp[i-1][j-1]+1</li>
-</ul>
-</li>
-<li>3、初始化：dp[i][0] &#x3D; i,dp[0][j] &#x3D; j,dp[0][0] &#x3D; 0</li>
-<li>遍历顺序：</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minDistance = <span class="keyword">function</span>(<span class="params">word1, word2</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = word1.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = word2.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="comment">//这两个for循环用于初始化dp数组</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    dp[i][<span class="number">0</span>] = i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;=m;j++)&#123;</span><br><span class="line">    dp[<span class="number">0</span>][j] = j</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (word1[i-<span class="number">1</span>] == word2[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">min</span>(dp[i-<span class="number">1</span>][j]+<span class="number">1</span>,dp[i][j-<span class="number">1</span>]+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n][m]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-        <h2 id="编辑距离">
-          <a href="#编辑距离" class="heading-link"><i class="fas fa-link"></i></a><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/edit-distance/description/">https://leetcode.cn/problems/edit-distance/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/320344977a78da29c28638deff52dc0fb2bae5dc678c73d0a6472ed8a9727030.png" alt="图 5"></p>
-<p><strong>思路</strong><br>看起来好复杂哦。</p>
-<p>题目要求讲word1转为word2的最少操作次数，但实际上我们可以从word2转为word3，或者word1和word2同时操作都可以</p>
-<ul>
-<li><p>1、dp[i][j]： 以i-1为结尾的word1和j-1为结尾的word2的最少的操作次数</p>
-</li>
-<li><p>2、递推公式：</p>
-<ul>
-<li><p>if (word1[i-1] &#x3D;&#x3D; word2[j-1]) dp[i][j] &#x3D; dp[i-1][j-1],相同不需要操作</p>
-</li>
-<li><p>else dp[i][j] &#x3D; min(dp[i][j-1] + 1,dp[i-1][j]+1,dp[i-1][j-1]+1)</p>
-<ul>
-<li>上操作了</li>
-<li>增：word2[i-1]增加一个字符, dp[i][j] &#x3D; dp[i][j-1] + 1</li>
-<li>删：删掉word1[i-1] ,dp[i][j] &#x3D; dp[i-1][j]+1</li>
-<li>替换：dp[i][j] &#x3D; dp[i-1][j-1]+1<br>eg: word1 &#x3D; ‘ab’ , word2 &#x3D; ‘a’ , 可以是ab删掉b，也可以a增加b。dp数组如下图所示意的：</li>
-</ul>
-<figure class="highlight plaintext"><figcaption><span>a     d</span></figcaption><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  +-----+-----+             +-----+-----+-----+</span><br><span class="line">  |  0  |  1  |             |  0  |  1  |  2  |</span><br><span class="line">  +-----+-----+   ===&gt;      +-----+-----+-----+</span><br><span class="line">a |  1  |  0  |           a |  1  |  0  |  1  |</span><br><span class="line">  +-----+-----+             +-----+-----+-----+</span><br><span class="line">d |  2  |  1  |</span><br><span class="line">  +-----+-----+</span><br></pre></td></tr></table></div></figure></li>
-</ul>
-</li>
-<li><p>3、初始化：</p>
-<ul>
-<li>dp[i][0] &#x3D; i</li>
-<li>dp[0][j] &#x3D; j</li>
-</ul>
-</li>
-<li><p>4、遍历顺序：</p>
-</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minDistance = <span class="keyword">function</span>(<span class="params">word1, word2</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n= word1.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = word2.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    dp[i][<span class="number">0</span>] = i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;=m;j++)&#123;</span><br><span class="line">    dp[<span class="number">0</span>][j] = j</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (word1[i-<span class="number">1</span>]==word2[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">min</span>(dp[i][j-<span class="number">1</span>]+<span class="number">1</span>,dp[i-<span class="number">1</span>][j]+<span class="number">1</span>,dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n][m]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/12/devlopment/%E5%8D%9A%E5%AE%A2%E5%9F%9F%E5%90%8D%E9%85%8D%E7%BD%AE/">博客域名配置</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="博客域名配置">
-          <a href="#博客域名配置" class="heading-link"><i class="fas fa-link"></i></a><a href="#博客域名配置" class="headerlink" title="博客域名配置"></a>博客域名配置</h1>
-      
-        <h2 id="域名购买">
-          <a href="#域名购买" class="heading-link"><i class="fas fa-link"></i></a><a href="#域名购买" class="headerlink" title="域名购买"></a>域名购买</h2>
-      <p>我在阿里云买了域名10元一个，因为我已经不是新用户了，呜呜呜呜</p>
-
-        <h3 id="1、注册并登录">
-          <a href="#1、注册并登录" class="heading-link"><i class="fas fa-link"></i></a><a href="#1、注册并登录" class="headerlink" title="1、注册并登录"></a>1、注册并登录</h3>
-      
-        <h3 id="2、查询域名，挑一个喜欢的实惠的买下来。">
-          <a href="#2、查询域名，挑一个喜欢的实惠的买下来。" class="heading-link"><i class="fas fa-link"></i></a><a href="#2、查询域名，挑一个喜欢的实惠的买下来。" class="headerlink" title="2、查询域名，挑一个喜欢的实惠的买下来。"></a>2、查询域名，挑一个喜欢的实惠的买下来。</h3>
-      <p>  直接这样操作下来就会发现付款的时候有提示说，没有实名认证。但也可以付款只不过要在付款后进行实名认证，认证成功后完成过户才正常使用。</p>
-<ul>
-<li>认证的话跟着指引一步步来就行</li>
-<li>过户的操作:进入我的域名控制台–&gt;域名列表–&gt;管理–&gt;域名持有者信息修改（过户）–&gt;提交申请，通过后会有短信提醒。<br>  <img src="/../../images/806713911f17eafc32fa2ebfc16e416ed1659e4702b40d133b7aaed8bd627a40.png" alt="图 0"><br>  <img src="/../../images/a4d7274ca87fdb78cf416bd8586d33602c3a2586fb91447cd95d62da973e4d26.png" alt="图 1"><br>  <img src="/../../images/6e48857d9b661e9e2c9288ed21f6371521b18d994c60a151348ce1a325ea0776.png" alt="图 2"></li>
-</ul>
-
-        <h3 id="3、域名可以正常使用之后要取配置github-pages和域名的解析">
-          <a href="#3、域名可以正常使用之后要取配置github-pages和域名的解析" class="heading-link"><i class="fas fa-link"></i></a><a href="#3、域名可以正常使用之后要取配置github-pages和域名的解析" class="headerlink" title="3、域名可以正常使用之后要取配置github pages和域名的解析"></a>3、域名可以正常使用之后要取配置github pages和域名的解析</h3>
-      
-        <h4 id="3-1、github-pages">
-          <a href="#3-1、github-pages" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-1、github-pages" class="headerlink" title="3.1、github pages:"></a>3.1、github pages:</h4>
-      <p>  打开仓库–&gt;点击新建一个文件–&gt;新建一个名为CNAME的为文件，文件内容为刚申请的域名–&gt;保存修改后，打开设置–&gt;修改名字（个人觉得这步可以去掉，只要后面解析的时候保证名字一样即可）–&gt;点击左边导航栏的Pages–&gt;在Custom domain中输入自己的域名。<br>  不过这里肯定解析不出来啦，因为还没配置域名解析呢（见3.2）！<br>  <img src="/../../images/65dd9d1da0793a78e2e82b9b15c1f121f9869d7f19354078b356249020f34ec2.png" alt="图 4"><br>  <img src="/../../images/c5ff78a4652c35dd08339f31dbf185b2b745ea481d6ec703a13c9a3a70ad5946.png" alt="图 5"><br>  <img src="/../../images/db3361ffe13a97b72a58e9f0473a01cc8bbc05ba27e0f1ce14e1f1e4cb177089.png" alt="图 3"><br>  <img src="/../../images/05ae15865a8c117e1c504ddc8c9d027866fd2932798aaafc41e47e6d62a23bf9.png" alt="图 6"><br>  <img src="/../../images/25df808106f71db2791d7e9c094e31d7d8cf4ebfe94c9bc50c422fd3a02061e1.png" alt="图 8"></p>
-
-        <h4 id="3-2、配置域名解析">
-          <a href="#3-2、配置域名解析" class="heading-link"><i class="fas fa-link"></i></a><a href="#3-2、配置域名解析" class="headerlink" title="3.2、配置域名解析"></a>3.2、配置域名解析</h4>
-      <p>  去阿里云平台，找到域名控制台的域名列表，点击解析；配置图见下面图2，图3的名字和图2中配置保持一致。然后再到pages页面稍等片刻就会发现DNS check成功了，说明可以直接通过域名访问博客了。<br>  <img src="/../../images/450f7b419806fdd571add880464417fdf75ec7e62570e74178ae533db6eeda8a.png" alt="图 9"><br>  <img src="/../../images/874c2adee8b25ba7925d2c3196996f1ab8e2002ce1a2a740ef5307a8221b3233.png" alt="图 10"><br>  <img src="/../../images/6c32d92a5ddfbdf1696049e71654f64243e954cec1250341a6ecaf0361aec785.png" alt="图 11"><br>  <img src="/../../images/0b3a2f3485f20268662357b54d5c29c6755b787b1f259cb8b7b7eef1574274ad.png" alt="图 12"><br>  <img src="/../../images/665e2b36dd8ce224cd785fc882afdf75bcfa3cb51918236a6e3baa1a7b89b3dd.png" alt="图 13"></p>
-<p><strong>注意</strong><br>为了防止每次hexo d都需要去github pages重新配置域名。需要在本地项目的source文件夹下新建一个CNAME去配置你的域名。</p>
-<p><img src="/../../images/1528618f5908934c0aac80008815ed269c1951f296ff2c734d87da171870740d.png" alt="图 14"></p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/11/algrithm/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/">子序列</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-16</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="子序列与动态规划问题">
-          <a href="#子序列与动态规划问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#子序列与动态规划问题" class="headerlink" title="子序列与动态规划问题"></a>子序列与动态规划问题</h1>
-      
-        <h2 id="最长递增子序列">
-          <a href="#最长递增子序列" class="heading-link"><i class="fas fa-link"></i></a><a href="#最长递增子序列" class="headerlink" title="最长递增子序列"></a>最长递增子序列</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/description/">https://leetcode.cn/problems/longest-increasing-subsequence/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/81312fd110c5573ae2d44e392b1f7de1eadbea4914246d7b75ba6d6829a8eba2.png" alt="图 0"></p>
-<p><strong>思路</strong><br>本题也是代码随想录中子序列问题的第一题，如果没接触过这种题目的话，本题还是很难的，甚至想暴力去搜索也不知道怎么搜。 子序列问题是动态规划解决的经典问题，<strong>当前下标i的递增子序列长度，其实和i之前的下表j的子序列长度有关系</strong>，那又是什么样的关系呢。</p>
-<ul>
-<li>1、dp[i]表示i之前包括i的以nums[i]结尾的最长递增子序列的长度<br>为什么一定表示 “以nums[i]结尾的最长递增子序” ，因为我们在做递增比较的时候，如果比较 nums[j] 和 nums[i] 的大小，那么两个递增子序列一定分别以nums[j]为结尾 和 nums[i]为结尾， 要不然这个比较就没有意义了，不是尾部元素的比较那么 如何算递增呢。</li>
-<li>2、状态转移方程<ul>
-<li><code>if (nums[i]&gt;nums[j]) dp[i] = max(dp[i],dp[j]+1)</code>这里的含义是，取dp[j]+1的最大值。</li>
-</ul>
-</li>
-<li>3、初始化，子序列的长度最短为1</li>
-<li>4、遍历顺序，外层遍历i(1 ~ n)，内层遍历j(0 ~ i-1)</li>
-<li>还要注意并不是dp[n-1]才是最终的值，最大值应该是<strong>dp数组中的最大值</strong>。</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lengthOfLIS = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = nums.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">1</span>)</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (nums[i]&gt;nums[j]) dp[i] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i],dp[j]+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dp[i]&gt;result) result = dp[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h2 id="最长递增子序列-1">
-          <a href="#最长递增子序列-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#最长递增子序列-1" class="headerlink" title="最长递增子序列"></a>最长递增子序列</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-continuous-increasing-subsequence/description/">https://leetcode.cn/problems/longest-continuous-increasing-subsequence/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/aec13e165fe037950897965e642cadf2f8d7e8a9d8e53c7a795325ede09b61c0.png" alt="图 1"></p>
-<p><strong>思路</strong><br>这里的序列要连续，因此当前的状态要由前一个决定</p>
-<ul>
-<li>1、dp[i]：以下标i为结尾的连续递增的子序列长度为dp[i]</li>
-<li>2、if(nums[i]&gt;nums[i-1]) dp[i] &#x3D; dp[i-1]+1</li>
-<li>3、初始化dp[i]都等于1</li>
-<li>4、循环，只需要一层循环遍历i即可</li>
-<li>当然同样注意最终答案不是dp[n-1]，而是dp数组中的最大值</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> findLengthOfLCIS = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = nums.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">1</span>)</span><br><span class="line">  <span class="keyword">let</span> result =<span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums[i]&gt;nums[i-<span class="number">1</span>]) dp[i] = dp[i-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (dp[i]&gt;result) result = dp[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h2 id="最长重复子数组">
-          <a href="#最长重复子数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#最长重复子数组" class="headerlink" title="最长重复子数组"></a>最长重复子数组</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-length-of-repeated-subarray/description/">https://leetcode.cn/problems/maximum-length-of-repeated-subarray/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/139fb0983f3e633d46d643eb3b45def6b403bce5076c6d9cf1bac27a15ec5fbc.png" alt="图 2"></p>
-<p><strong>难点</strong><br>动态数组怎么表示，又是什么含义</p>
-<p><strong>思路</strong><br>如果要暴力破解的话，把每个数组的子数组遍历出来，然后两两比较，得出最长重复子数组</p>
-<ul>
-<li><p>1、二维<code>dp[i][j]</code>，以i-1为结尾的<code>nums[1]</code>和以j-1为结尾的<code>nums[2]</code>,的最长重复子数组的长度；本质上也是两两比较了，但是由于我记录了前一个状态的值，在进行下一个状态比较时，子需要对比一个数即可结合前一个状态得出现在状态的值。</p>
-<ul>
-<li>为什么i，j表示下标为i-1和j-1呢？因为有<code>dp[i-1]</code>,<code>dp[j-1]</code>,因此i和j的最小值应该为1。dp数组遍历时候从1开始，但是nums数组要从0号元素开始比较。</li>
-</ul>
-</li>
-<li><p>2、递推公式：<code>if(nums[i-1]==nums[j-1]) dp[i][j] = dp[i-1][j-1] +1</code>;<br><img src="/../../images/6765bbda2526cf76d1a7db50397df4f35f8ee77c4ded94a2cf79b9b67e91a1eb.png" alt="图 4"></p>
-</li>
-<li><p>3、初始化：<code>dp[i][0] = 0,dp[0][j] = 0</code>;因为i和j遍历时都从1开始</p>
-</li>
-<li><p>4、遍历顺序：</p>
-</li>
-<li><p>这题也是结果在过程中，而不是遍历完之后。</p>
-</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> findLength = <span class="keyword">function</span>(<span class="params">nums1, nums2</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = nums1.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = nums2.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span>(nums1[i-<span class="number">1</span>] == nums2[j-<span class="number">1</span>]) dp[i][j]=dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">      <span class="keyword">if</span> (dp[i][j] &gt; result) result = dp[i][j]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h2 id="最长公共子序列">
-          <a href="#最长公共子序列" class="heading-link"><i class="fas fa-link"></i></a><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-common-subsequence/description/">https://leetcode.cn/problems/longest-common-subsequence/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/cd0bb2556e285ff0ad97a51419d05f5de8088d222c174327b899eca5ad663a1e.png" alt="图 3"></p>
-<p><strong>思路</strong><br>这道题就是可以不连续，可以不连续前面一维数组做过，不过现在dp需要时二维数组，因此这题主要突破点再递推公式上</p>
-<ul>
-<li><p>1、dp[i][j]表示以i-1为结尾的第一个字符串和j-1结尾的第二个字符串的最长公共子序列长度</p>
-</li>
-<li><p>2、递推公式：主要就是两大情况： text1[i - 1] 与 text2[j - 1]相同，text1[i - 1] 与 text2[j - 1]不相同。</p>
-<ul>
-<li>if (text1[i-1]&#x3D;&#x3D;text2[j-1]) dp[i][j] &#x3D; dp[i-1][j-1]+1;</li>
-<li>else dp[i][j] &#x3D; max(dp[i-1][j],dp[i][j-1])</li>
-</ul>
-</li>
-<li><p>3、初始化，均为0即可，</p>
-</li>
-<li><p>4、遍历顺序，那么为了在递推的过程中，这三个方向都是经过计算的数值，所以要从前向后，从上到下来遍历这个矩阵。<br><img src="/../../images/6a684733782f993681c27dafdd52df4dca1eb0f41e383c6d495bd107ae95cc58.png" alt="图 5"></p>
-</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> longestCommonSubsequence = <span class="keyword">function</span>(<span class="params">text1, text2</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = text1.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = text2.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span> <span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (text1[i-<span class="number">1</span>]==text2[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n][m]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-        <h2 id="不相交的线">
-          <a href="#不相交的线" class="heading-link"><i class="fas fa-link"></i></a><a href="#不相交的线" class="headerlink" title="不相交的线"></a>不相交的线</h2>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/uncrossed-lines/description/">https://leetcode.cn/problems/uncrossed-lines/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/0950ea987d264f7e2ed1cc66431d89a66429350386479a5906e690a59d3552b6.png" alt="图 2"></p>
-<p><strong>思路</strong><br>其实也就是说A和B的最长公共子序列是[1,4]，长度为2。 这个公共子序列指的是相对顺序不变（即数字4在字符串A中数字1的后面，那么数字4也应该在字符串B数字1的后面）</p>
-<p>这么分析完之后，大家可以发现：本题说是求绘制的最大连线数，其实就是求两个字符串的最长公共子序列的长度！</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> maxUncrossedLines = <span class="keyword">function</span>(<span class="params">nums1, nums2</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = nums1.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> m = nums2.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n+<span class="number">1</span>&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(m+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (nums1[i-<span class="number">1</span>]==nums2[j-<span class="number">1</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n][m]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">GaoNana</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GnanaN/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/weixin_43562106" target="_blank" rel="noopener" data-popover="social.CSDN" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="mailto:nana_ga@126.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">67</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">21</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">51</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GaoNana</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v7.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> longestPalindromeSubseq = <span class="keyword">function</span>(<span class="params">s</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> n = s.<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>.<span class="title function_">from</span>(&#123;<span class="attr">length</span>:n&#125;,<span class="function">()=&gt;</span><span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    dp[i][i] =<span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=n-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=i+<span class="number">1</span>;j&lt;n;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (i==j) dp[i][j] = <span class="number">1</span></span><br><span class="line">      <span class="keyword">if</span> (s[i]==s[j]) dp[i][j] = dp[i+<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">2</span></span><br><span class="line">      <span class="keyword">else</span> dp[i][j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i+<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[<span class="number">0</span>][n-<span class="number">1</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure></div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">GaoNana</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GnanaN/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/weixin_43562106" target="_blank" rel="noopener" data-popover="social.CSDN" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="mailto:nana_ga@126.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">70</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">23</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">53</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GaoNana</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v7.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js"></script><script>window.addEventListener('DOMContentLoaded', function () {
   var pjax = new Pjax({"selectors":["head title","#main",".pjax-reload",".header-banner"],"history":true,"scrollTo":false,"scrollRestoration":false,"cacheBust":false,"debug":false,"currentUrlFullReload":false,"timeout":0});
   // 加载进度条的计时器
   var loadingTimer = null;
