@@ -84,6 +84,107 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
       <p>无限滑动的原理和虚拟滚动的原理差不多，要保持 SlideList 里面永远只有 N 个 SlideItem，就要在滑动时不断的删除和增加 SlideItem。<br>滑动时调整 SlideList 的偏移量 translateY 的值，以及列表里那几个 SlideItem 的 top 值，就可以了</p>
 <p>为什么要调整 SlideList 的偏移量 translateY 的值同时还要调整 SlideItem 的 top 值呢？<br>因为 translateY 只是将整个列表移动，如果我们列表里面的元素是固定的，不会变多和减少，那么没关系，只调整　translateY 值就可以了，上滑了几页就减几页的高度，下滑同理</p>
 <p>但是如果整个列表向前移动了一页，同时前面的 SlideItem 也少了一个，，那么最终效果就是移动了两页…因为 塌陷 了一页<br>这显然不是我们想要的，所以我们还需要同时调整 SlideItem 的 top 值，加上前面少的 SlideItem 的高度，这样才能显示出正常的内容</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">大文件续传</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h2 id="是什么">
+          <a href="#是什么" class="heading-link"><i class="fas fa-link"></i></a><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2>
+      <ul>
+<li><p>针对问题：<br> 在同一个请求中，要上传大量的数据，导致整个过程会比较漫长，且失败后需要重头开始上传。</p>
+</li>
+<li><p>解决思路：<br>将这个请求拆分成多个请求，每个请求的时间就会缩短，且如果某个请求失败，只需要重新发送这一次请求即可，无需从头开始，这样是否可以解决大文件上传的问题呢？</p>
+</li>
+<li><p>要求</p>
+<ul>
+<li>支持拆分上传文件请求</li>
+<li>支持断点续传</li>
+<li>支持显示上传进度和暂定进度</li>
+</ul>
+</li>
+<li><p>技术</p>
+<ul>
+<li>webWorker:<br>是一种在后台线程中运行脚本的技术，允许开发者在不阻塞用户界面的情况下执行复杂和耗时的任务。Web Worker 提供了一个独立的执行环境，与主线程（UI 线程）隔离开来，避免了长时间运行的脚本导致的页面卡顿。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="逻辑">
+          <a href="#逻辑" class="heading-link"><i class="fas fa-link"></i></a><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2>
+      <ul>
+<li>1、将上传的文件切片，并对每个切片标上记号，是哪个文件的切片是切片的那一部分（用hash实现标记）</li>
+<li>2、后端把成功的标记记录下来，上传每个文件时，都判断一下标记是否存在，如果存在不上传，如果存在就上传。</li>
+<li>3、后端对上传完整的文件切片进行拼接。</li>
+</ul>
+
+        <h2 id="细节">
+          <a href="#细节" class="heading-link"><i class="fas fa-link"></i></a><a href="#细节" class="headerlink" title="细节"></a>细节</h2>
+      
+        <h3 id="webworker-处理对文件的切片">
+          <a href="#webworker-处理对文件的切片" class="heading-link"><i class="fas fa-link"></i></a><a href="#webworker-处理对文件的切片" class="headerlink" title="webworker 处理对文件的切片"></a>webworker 处理对文件的切片</h3>
+      
+        <h4 id="webWorker的特点">
+          <a href="#webWorker的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#webWorker的特点" class="headerlink" title="webWorker的特点"></a>webWorker的特点</h4>
+      <ul>
+<li>独立线程：Web Worker 在独立的线程中运行，与主线程并行执行。</li>
+<li>无阻塞：由于在独立线程中运行，Web Worker 不会阻塞主线程的执行。</li>
+<li>通信机制：主线程和 Worker 线程之间通过消息传递（postMessage 和 onmessage）进行通信。</li>
+<li>受限环境：Worker 线程不能访问 DOM，也不能调用一些特定的 Web API，如 alert 和 localStorage。</li>
+</ul>
+
+        <h4 id="基本用法">
+          <a href="#基本用法" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4>
+      <ul>
+<li>监听消息事件<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="keyword">async</span> e =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">  <span class="keyword">const</span> &#123; file, chunkSize &#125; = e.<span class="property">data</span></span><br><span class="line">  <span class="keyword">const</span> fileChunkList = <span class="keyword">await</span> <span class="title function_">createFileChunk</span>(file, chunkSize)</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">calculateChunksHash</span>(fileChunkList)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure></li>
+<li>监听错误事件<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;%cWorker 线程 error 监听事件: &quot;</span>, <span class="string">&#x27;color: red&#x27;</span>, e)</span><br><span class="line">  <span class="comment">// worker 线程关闭</span></span><br><span class="line">  self.<span class="title function_">close</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h4 id="切片实现">
+          <a href="#切片实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#切片实现" class="headerlink" title="切片实现"></a>切片实现</h4>
+      <ul>
+<li>1、文件切片<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个参数是file，第二个是切片大小</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createFileChunk</span>(<span class="params">file, chunkSize</span>) &#123;</span><br><span class="line">  <span class="comment">// new Promise 的基本用法：来创建一个新的 Promise 对象,该函数有两个参数：resolve 和 reject。</span></span><br><span class="line">  <span class="comment">//resolve 用于在异步操作成功时返回结果，reject 用于在异步操作失败时返回错误。</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> fileChunkList = []</span><br><span class="line">    <span class="keyword">let</span> cur = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> (cur &lt; file.<span class="property">size</span>) &#123;</span><br><span class="line">      fileChunkList.<span class="title function_">push</span>(&#123; <span class="attr">chunkFile</span>: file.<span class="title function_">slice</span>(cur, cur + chunkSize) &#125;)</span><br><span class="line">      cur += chunkSize</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">resolve</span>(fileChunkList)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+</ul>
+
+        <h4 id="切片标记">
+          <a href="#切片标记" class="heading-link"><i class="fas fa-link"></i></a><a href="#切片标记" class="headerlink" title="切片标记"></a>切片标记</h4>
+      <ul>
+<li>每个切片有自己的MD5哈希值，所有切片的哈希值保存在SparkMD5.ArrayBuffer 实例spark中，在切片完成后，spark值传递给fileHash，webWork将fileHash和fileChunkList文件切片传给了主线程。</li>
+</ul>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记载并计算文件切片的 md5</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">calculateChunksHash</span>(<span class="params">fileChunkList = []</span>) &#123;</span><br><span class="line">  <span class="comment">// 创建一个 SparkMD5.ArrayBuffer 实例，用于计算 MD5 哈希值。</span></span><br><span class="line">  <span class="keyword">const</span> spark = <span class="keyword">new</span> <span class="title class_">SparkMD5</span>.<span class="title class_">ArrayBuffer</span>()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 计算切片进度</span></span><br><span class="line">  <span class="keyword">let</span> percentage = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> fileHash = <span class="keyword">await</span> <span class="title function_">loadNext</span>()</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; <span class="attr">percentage</span>: <span class="number">100</span>, fileHash, fileChunkList &#125;)</span><br><span class="line">    self.<span class="title function_">close</span>()</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;error&#x27;</span>, <span class="attr">data</span>: err &#125;)</span><br><span class="line">    self.<span class="title function_">close</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 递归函数，处理文件的切片</span></span><br><span class="line">  <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadNext</span>(<span class="params">index = <span class="number">0</span></span>) &#123;</span><br><span class="line">    <span class="comment">// 所有的切片都已处理完毕</span></span><br><span class="line">    <span class="keyword">if</span> (index &gt;= fileChunkList.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="comment">// 返回这个文件的MD5哈希值</span></span><br><span class="line">      <span class="keyword">return</span> spark.<span class="title function_">end</span>()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reader = <span class="keyword">new</span> <span class="title class_">FileReader</span>()</span><br><span class="line">      reader.<span class="title function_">readAsArrayBuffer</span>(fileChunkList[index].<span class="property">chunkFile</span>)</span><br><span class="line">      reader.<span class="property">onload</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        spark.<span class="title function_">append</span>(e.<span class="property">target</span>.<span class="property">result</span>)</span><br><span class="line">        percentage += <span class="number">100</span> / fileChunkList.<span class="property">length</span></span><br><span class="line">        self.<span class="title function_">postMessage</span>(&#123;</span><br><span class="line">          percentage</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="title function_">loadNext</span>(index + <span class="number">1</span>))</span><br><span class="line">      &#125;</span><br><span class="line">      reader.<span class="property">onerror</span> = <span class="function">(<span class="params">err</span>) =&gt;</span> <span class="title function_">reject</span>(err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+        <h3 id="主线程任务">
+          <a href="#主线程任务" class="heading-link"><i class="fas fa-link"></i></a><a href="#主线程任务" class="headerlink" title="主线程任务"></a>主线程任务</h3>
+      <ul>
+<li>该方法能依次上传多个文件。</li>
+<li>切片大小设置为5MB</li>
+<li>多个文件输入处理逻辑：<ul>
+<li>如果输入框有change事件，判断是否有文件传入，如果有将每个文件进行切片处理，并上传</li>
+<li>对每个文件绑定响应式对象，对象包括文件名、文件大小、文件状态、<em><strong>所有需要上传的切片</strong></em>、文件hash、最大报错次数、上传进度等属性。</li>
+<li>根据文件的状态来确定，当前文件需要进行的流程。</li>
+<li>需要切片上传的文件，交给webworker切片，并将结果返回。作为参数传给开始上传函数</li>
+<li><strong>多个文件并行上传</strong></li>
+</ul>
+</li>
+<li>开始上传文件的逻辑：<ul>
+<li>需要参数，file，inTaskArrItem（初始化的一个对象，包含单个文件的属性）， fileChunkList（单个文件的切片）</li>
+<li>判断文件是否已经存在于服务器，如果存在直接return，如果不存在执行上传的逻辑</li>
+<li>将每个切片的信息写入inTaskArrItem的allChunList（<em><strong>所有需要上传的切片</strong></em>）中</li>
+<li>对allChunkList进行过滤，过滤掉已经上传成功的切片（判断是否上传成功，由checkfile函数完成）</li>
+<li>如果没有需要上传的切片，但是前面判断服务器中没有此文件，说明需要合并，再次执行文件合并函数</li>
+</ul>
+</li>
+<li>每一个文件的处理逻辑<ul>
+<li>如果没有需要上传的切片或者状态为正在被上传，不做处理</li>
+<li>找出需要上传的文件，并将入待处理文件的列表中。根据列表长度计算每个文件的并发请求数量。（chrome浏览器同域名同一时间请求的最大并发数限制为 6，如果有三个文件需要上传，那么每个文件上传只能同时并发2个请求）</li>
+<li>从需要上传的切片尾部拿2个切片，放入请求数组中。并将其从allChunkList中删除</li>
+<li>开始上传切片</li>
+</ul>
+</li>
+<li>切片上传逻辑<ul>
+<li>首先判断文件状态，如果文件状态为暂停或终端就什么都不错</li>
+<li>每个切片由三次机会，如果三次都失败，则文件上传失败</li>
+</ul>
+</li>
+</ul>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/20/devlopment/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">图片懒加载</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="图片懒加载">
           <a href="#图片懒加载" class="heading-link"><i class="fas fa-link"></i></a><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h1>
@@ -226,107 +327,6 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
 <li><p>销毁：在组件销毁前取消观察</p>
 </li>
 <li><p>然后这里还定义了一些自定义函数，供插件使用者监听组件的状况。</p>
-</li>
-</ul>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">大文件续传</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="是什么">
-          <a href="#是什么" class="heading-link"><i class="fas fa-link"></i></a><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2>
-      <ul>
-<li><p>针对问题：<br> 在同一个请求中，要上传大量的数据，导致整个过程会比较漫长，且失败后需要重头开始上传。</p>
-</li>
-<li><p>解决思路：<br>将这个请求拆分成多个请求，每个请求的时间就会缩短，且如果某个请求失败，只需要重新发送这一次请求即可，无需从头开始，这样是否可以解决大文件上传的问题呢？</p>
-</li>
-<li><p>要求</p>
-<ul>
-<li>支持拆分上传文件请求</li>
-<li>支持断点续传</li>
-<li>支持显示上传进度和暂定进度</li>
-</ul>
-</li>
-<li><p>技术</p>
-<ul>
-<li>webWorker:<br>是一种在后台线程中运行脚本的技术，允许开发者在不阻塞用户界面的情况下执行复杂和耗时的任务。Web Worker 提供了一个独立的执行环境，与主线程（UI 线程）隔离开来，避免了长时间运行的脚本导致的页面卡顿。</li>
-</ul>
-</li>
-</ul>
-
-        <h2 id="逻辑">
-          <a href="#逻辑" class="heading-link"><i class="fas fa-link"></i></a><a href="#逻辑" class="headerlink" title="逻辑"></a>逻辑</h2>
-      <ul>
-<li>1、将上传的文件切片，并对每个切片标上记号，是哪个文件的切片是切片的那一部分（用hash实现标记）</li>
-<li>2、后端把成功的标记记录下来，上传每个文件时，都判断一下标记是否存在，如果存在不上传，如果存在就上传。</li>
-<li>3、后端对上传完整的文件切片进行拼接。</li>
-</ul>
-
-        <h2 id="细节">
-          <a href="#细节" class="heading-link"><i class="fas fa-link"></i></a><a href="#细节" class="headerlink" title="细节"></a>细节</h2>
-      
-        <h3 id="webworker-处理对文件的切片">
-          <a href="#webworker-处理对文件的切片" class="heading-link"><i class="fas fa-link"></i></a><a href="#webworker-处理对文件的切片" class="headerlink" title="webworker 处理对文件的切片"></a>webworker 处理对文件的切片</h3>
-      
-        <h4 id="webWorker的特点">
-          <a href="#webWorker的特点" class="heading-link"><i class="fas fa-link"></i></a><a href="#webWorker的特点" class="headerlink" title="webWorker的特点"></a>webWorker的特点</h4>
-      <ul>
-<li>独立线程：Web Worker 在独立的线程中运行，与主线程并行执行。</li>
-<li>无阻塞：由于在独立线程中运行，Web Worker 不会阻塞主线程的执行。</li>
-<li>通信机制：主线程和 Worker 线程之间通过消息传递（postMessage 和 onmessage）进行通信。</li>
-<li>受限环境：Worker 线程不能访问 DOM，也不能调用一些特定的 Web API，如 alert 和 localStorage。</li>
-</ul>
-
-        <h4 id="基本用法">
-          <a href="#基本用法" class="heading-link"><i class="fas fa-link"></i></a><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4>
-      <ul>
-<li>监听消息事件<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="keyword">async</span> e =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e)</span><br><span class="line">  <span class="keyword">const</span> &#123; file, chunkSize &#125; = e.<span class="property">data</span></span><br><span class="line">  <span class="keyword">const</span> fileChunkList = <span class="keyword">await</span> <span class="title function_">createFileChunk</span>(file, chunkSize)</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">calculateChunksHash</span>(fileChunkList)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure></li>
-<li>监听错误事件<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;%cWorker 线程 error 监听事件: &quot;</span>, <span class="string">&#x27;color: red&#x27;</span>, e)</span><br><span class="line">  <span class="comment">// worker 线程关闭</span></span><br><span class="line">  self.<span class="title function_">close</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h4 id="切片实现">
-          <a href="#切片实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#切片实现" class="headerlink" title="切片实现"></a>切片实现</h4>
-      <ul>
-<li>1、文件切片<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个参数是file，第二个是切片大小</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createFileChunk</span>(<span class="params">file, chunkSize</span>) &#123;</span><br><span class="line">  <span class="comment">// new Promise 的基本用法：来创建一个新的 Promise 对象,该函数有两个参数：resolve 和 reject。</span></span><br><span class="line">  <span class="comment">//resolve 用于在异步操作成功时返回结果，reject 用于在异步操作失败时返回错误。</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> fileChunkList = []</span><br><span class="line">    <span class="keyword">let</span> cur = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> (cur &lt; file.<span class="property">size</span>) &#123;</span><br><span class="line">      fileChunkList.<span class="title function_">push</span>(&#123; <span class="attr">chunkFile</span>: file.<span class="title function_">slice</span>(cur, cur + chunkSize) &#125;)</span><br><span class="line">      cur += chunkSize</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">resolve</span>(fileChunkList)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
-</ul>
-
-        <h4 id="切片标记">
-          <a href="#切片标记" class="heading-link"><i class="fas fa-link"></i></a><a href="#切片标记" class="headerlink" title="切片标记"></a>切片标记</h4>
-      <ul>
-<li>每个切片有自己的MD5哈希值，所有切片的哈希值保存在SparkMD5.ArrayBuffer 实例spark中，在切片完成后，spark值传递给fileHash，webWork将fileHash和fileChunkList文件切片传给了主线程。</li>
-</ul>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记载并计算文件切片的 md5</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">calculateChunksHash</span>(<span class="params">fileChunkList = []</span>) &#123;</span><br><span class="line">  <span class="comment">// 创建一个 SparkMD5.ArrayBuffer 实例，用于计算 MD5 哈希值。</span></span><br><span class="line">  <span class="keyword">const</span> spark = <span class="keyword">new</span> <span class="title class_">SparkMD5</span>.<span class="title class_">ArrayBuffer</span>()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 计算切片进度</span></span><br><span class="line">  <span class="keyword">let</span> percentage = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> fileHash = <span class="keyword">await</span> <span class="title function_">loadNext</span>()</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; <span class="attr">percentage</span>: <span class="number">100</span>, fileHash, fileChunkList &#125;)</span><br><span class="line">    self.<span class="title function_">close</span>()</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    self.<span class="title function_">postMessage</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;error&#x27;</span>, <span class="attr">data</span>: err &#125;)</span><br><span class="line">    self.<span class="title function_">close</span>()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 递归函数，处理文件的切片</span></span><br><span class="line">  <span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">loadNext</span>(<span class="params">index = <span class="number">0</span></span>) &#123;</span><br><span class="line">    <span class="comment">// 所有的切片都已处理完毕</span></span><br><span class="line">    <span class="keyword">if</span> (index &gt;= fileChunkList.<span class="property">length</span>) &#123;</span><br><span class="line">      <span class="comment">// 返回这个文件的MD5哈希值</span></span><br><span class="line">      <span class="keyword">return</span> spark.<span class="title function_">end</span>()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> reader = <span class="keyword">new</span> <span class="title class_">FileReader</span>()</span><br><span class="line">      reader.<span class="title function_">readAsArrayBuffer</span>(fileChunkList[index].<span class="property">chunkFile</span>)</span><br><span class="line">      reader.<span class="property">onload</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        spark.<span class="title function_">append</span>(e.<span class="property">target</span>.<span class="property">result</span>)</span><br><span class="line">        percentage += <span class="number">100</span> / fileChunkList.<span class="property">length</span></span><br><span class="line">        self.<span class="title function_">postMessage</span>(&#123;</span><br><span class="line">          percentage</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="title function_">loadNext</span>(index + <span class="number">1</span>))</span><br><span class="line">      &#125;</span><br><span class="line">      reader.<span class="property">onerror</span> = <span class="function">(<span class="params">err</span>) =&gt;</span> <span class="title function_">reject</span>(err)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-
-        <h3 id="主线程任务">
-          <a href="#主线程任务" class="heading-link"><i class="fas fa-link"></i></a><a href="#主线程任务" class="headerlink" title="主线程任务"></a>主线程任务</h3>
-      <ul>
-<li>该方法能依次上传多个文件。</li>
-<li>切片大小设置为5MB</li>
-<li>多个文件输入处理逻辑：<ul>
-<li>如果输入框有change事件，判断是否有文件传入，如果有将每个文件进行切片处理，并上传</li>
-<li>对每个文件绑定响应式对象，对象包括文件名、文件大小、文件状态、<em><strong>所有需要上传的切片</strong></em>、文件hash、最大报错次数、上传进度等属性。</li>
-<li>根据文件的状态来确定，当前文件需要进行的流程。</li>
-<li>需要切片上传的文件，交给webworker切片，并将结果返回。作为参数传给开始上传函数</li>
-<li><strong>多个文件并行上传</strong></li>
-</ul>
-</li>
-<li>开始上传文件的逻辑：<ul>
-<li>需要参数，file，inTaskArrItem（初始化的一个对象，包含单个文件的属性）， fileChunkList（单个文件的切片）</li>
-<li>判断文件是否已经存在于服务器，如果存在直接return，如果不存在执行上传的逻辑</li>
-<li>将每个切片的信息写入inTaskArrItem的allChunList（<em><strong>所有需要上传的切片</strong></em>）中</li>
-<li>对allChunkList进行过滤，过滤掉已经上传成功的切片（判断是否上传成功，由checkfile函数完成）</li>
-<li>如果没有需要上传的切片，但是前面判断服务器中没有此文件，说明需要合并，再次执行文件合并函数</li>
-</ul>
-</li>
-<li>每一个文件的处理逻辑<ul>
-<li>如果没有需要上传的切片或者状态为正在被上传，不做处理</li>
-<li>找出需要上传的文件，并将入待处理文件的列表中。根据列表长度计算每个文件的并发请求数量。（chrome浏览器同域名同一时间请求的最大并发数限制为 6，如果有三个文件需要上传，那么每个文件上传只能同时并发2个请求）</li>
-<li>从需要上传的切片尾部拿2个切片，放入请求数组中。并将其从allChunkList中删除</li>
-<li>开始上传切片</li>
-</ul>
-</li>
-<li>切片上传逻辑<ul>
-<li>首先判断文件状态，如果文件状态为暂停或终端就什么都不错</li>
-<li>每个切片由三次机会，如果三次都失败，则文件上传失败</li>
-</ul>
 </li>
 </ul>
 </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/18/algrithm/%E9%9D%A2%E8%AF%95%E6%89%8B%E6%92%95%E5%89%8D%E7%AB%AF/">面试算法题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-18</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-18</span></span></div></header><div class="post-body"><div class="post-excerpt"></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/09/10/interview/promiseall%E5%AE%9E%E7%8E%B0/">面试算法题</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-09-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-09-28</span></span></div></header><div class="post-body"><div class="post-excerpt">
@@ -1131,8 +1131,8 @@ if (true || false) {
 
   var gitalk = new Gitalk({
     id: md5(window.location.pathname.slice(1)),
-    clientID: 'Ov23liQNTPoHFLBFovbM',
-    clientSecret: 'e89d5a767d97128e079dd36dd60d7dbad02ce2b0',
+    clientID: 'Ov23lioqpEQkiFjabOts',
+    clientSecret: 'da39452594ed72ba7c65ff9bd9ef398756d82031',
     repo: '',
     owner: 'GnanaN',
     admin: ['GnanaN'],
