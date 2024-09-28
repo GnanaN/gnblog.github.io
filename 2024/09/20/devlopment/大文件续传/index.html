@@ -6,10 +6,10 @@
 <meta property="og:description" content="是什么        针对问题： 在同一个请求中，要上传大量的数据，导致整个过程会比较漫长，且失败后需要重头开始上传。  解决思路：将这个请求拆分成多个请求，每个请求的时间就会缩短，且如果某个请求失败，只需要重新发送这一次请求即可，无需从头开始，这样是否可以解决大文件上传的问题呢？  要求  支持拆分上传文件请求 支持断点续传 支持显示上传进度和暂定进度">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-09-28T08:59:53.446Z">
+<meta property="article:modified_time" content="2024-09-28T09:03:33.430Z">
 <meta property="article:author" content="GaoNana">
 <meta property="article:tag" content="大文件续传">
-<meta name="twitter:card" content="summary"><title>大文件续传 | GaoNana's Blog</title><link ref="canonical" href="http://example.com/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary"><title>大文件续传 | GaoNana's Blog</title><link ref="canonical" href="http://example.com/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.8.0"><link rel="stylesheet" href="css/custom.css"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -134,7 +134,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
 </ul>
 </li>
 </ul>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">GaoNana</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">http://example.com/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">大文件续传</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2024/09/20/devlopment/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">图片懒加载</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2024/09/18/algrithm/%E9%9D%A2%E8%AF%95%E6%89%8B%E6%92%95%E5%89%8D%E7%AB%AF/"><span class="paginator-prev__text">面试算法题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">GaoNana</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">http://example.com/2024/09/20/devlopment/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="http://example.com/tags/%E5%A4%A7%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0/">大文件续传</a></span></div><div class="post-reward reward"><div class="reward-button">请我喝杯咖啡~</div><div class="reward-qrcode"><span class="reward-qrcode-alipay"><img class="reward-qrcode-alipay__img"><div class="reward-qrcode-alipay__text">支付宝打赏</div></span><span class="reward-qrcode-wechat"><img class="reward-qrcode-wechat__img"><div class="reward-qrcode-wechat__text">微信打赏</div></span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2024/09/20/devlopment/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">图片懒加载</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2024/09/18/algrithm/%E9%9D%A2%E8%AF%95%E6%89%8B%E6%92%95%E5%89%8D%E7%AB%AF/"><span class="paginator-prev__text">面试算法题</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div><div class="comments" id="comments"><div id="gitalk-container"></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">
           是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91"><span class="toc-number">2.</span> <span class="toc-text">
           逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%86%E8%8A%82"><span class="toc-number">3.</span> <span class="toc-text">
           细节</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#webworker-%E5%A4%84%E7%90%86%E5%AF%B9%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%87%E7%89%87"><span class="toc-number">3.1.</span> <span class="toc-text">
@@ -494,4 +494,26 @@ if (true || false) {
   initQuicklink();
 } else {
   window.addEventListener('DOMContentLoaded', initQuicklink, false);
-}</script></div><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.json"></script></body></html>
+}</script></div><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js" data-pjax=""></script><script src="https://cdn.jsdelivr.net/npm/js-md5@latest/src/md5.min.js" data-pjax=""></script><script data-pjax="">function loadGitalk () {
+  if (!document.getElementById('gitalk-container')) {
+    return;
+  }
+
+  var gitalk = new Gitalk({
+    id: md5(window.location.pathname.slice(1)),
+    clientID: 'Ov23liQNTPoHFLBFovbM',
+    clientSecret: 'e89d5a767d97128e079dd36dd60d7dbad02ce2b0',
+    repo: '',
+    owner: 'GnanaN',
+    admin: ['GnanaN'],
+    distractionFreeMode: 'false',
+    language: 'zh-CN'
+  });
+  gitalk.render('gitalk-container');
+}
+
+if (true) {
+  loadGitalk();
+} else {
+  window.addEventListener('DOMContentLoaded', loadGitalk, false);
+}</script><script src="/js/utils.js?v=2.8.0"></script><script src="/js/stun-boot.js?v=2.8.0"></script><script src="/js/scroll.js?v=2.8.0"></script><script src="/js/header.js?v=2.8.0"></script><script src="/js/sidebar.js?v=2.8.0"></script><script type="application/json" src="/search.json"></script></body></html>
