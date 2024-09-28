@@ -30,7 +30,258 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Gao's Blog</div><div class="header-banner-info__subtitle">莫听穿林打叶声 何妨吟啸且徐行</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/19/algrithm/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/about/"><span class="header-nav-menu-item__icon"><i class="fas fa-user"></i></span><span class="header-nav-menu-item__text">关于</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">Gao's Blog</div><div class="header-banner-info__subtitle">莫听穿林打叶声 何妨吟啸且徐行</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/21/devlopment/%E5%9F%BA%E4%BA%8Ecesium%E5%92%8C%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E7%9A%84%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/">基于cesium和高德地图API的路径规划</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h1 id="基于cesium和高德地图API的路径规划">
+          <a href="#基于cesium和高德地图API的路径规划" class="heading-link"><i class="fas fa-link"></i></a><a href="#基于cesium和高德地图API的路径规划" class="headerlink" title="基于cesium和高德地图API的路径规划"></a>基于cesium和高德地图API的路径规划</h1>
+      
+        <h2 id="cesium">
+          <a href="#cesium" class="heading-link"><i class="fas fa-link"></i></a><a href="#cesium" class="headerlink" title="cesium"></a>cesium</h2>
+      <ul>
+<li><p>作为一个开源的、世界级的、展现3D全球地图的JavaScript类库，Cesium毫无疑问已然成为WebGIS开发中三维地球框架的首选，(<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://cesium.com/">https://cesium.com/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>)</p>
+</li>
+<li><p>cesium的组成和功能，如下表所示</p>
+</li>
+</ul>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Viewer</td>
+<td>提供3D、2D、2.5D的地图视图</td>
+</tr>
+<tr>
+<td>DataSource</td>
+<td>支持多种数据源，包括地形、影像、矢量数据等</td>
+</tr>
+<tr>
+<td>Entity</td>
+<td>用于在地图上展示点、线、面等几何图形</td>
+</tr>
+<tr>
+<td>Widget</td>
+<td>提供了一系列UI组件，如指南针、缩放控件等</td>
+</tr>
+<tr>
+<td>Scene</td>
+<td>管理和渲染3D场景</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>控制视角和视图</td>
+</tr>
+<tr>
+<td>CesiumWidget</td>
+<td>不带UI控件的Cesium Viewer的简化版本</td>
+</tr>
+<tr>
+<td>Primitives</td>
+<td>用于渲染几何图形和图像</td>
+</tr>
+<tr>
+<td>ImageryLayer</td>
+<td>管理地图影像图层</td>
+</tr>
+<tr>
+<td>TerrainProvider</td>
+<td>提供地形数据</td>
+</tr>
+</tbody></table></div>
+
+        <h2 id="高德地图api">
+          <a href="#高德地图api" class="heading-link"><i class="fas fa-link"></i></a><a href="#高德地图api" class="headerlink" title="高德地图api"></a>高德地图api</h2>
+      <ul>
+<li>高德地图api在js中的应用，有两大类一种是已经封装好的web服务，一种是js API</li>
+</ul>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>描述</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Web服务</td>
+<td>高德地图提供的一系列服务器端API，可以通过HTTP请求访问。这些服务包括地理编码、路径规划、静态地图等。</td>
+<td>当你需要在服务器端处理地图数据，或者在客户端进行简单的HTTP请求以获取地图数据时使用。</td>
+</tr>
+<tr>
+<td>JavaScript API</td>
+<td>一套在网页中直接嵌入和操作地图的接口。提供了丰富的功能，如地图显示、交互、覆盖物添加等。</td>
+<td>当你需要在网页中嵌入交互式地图，实现复杂的地图操作和数据可视化时使用。</td>
+</tr>
+</tbody></table></div>
+<p>前者已经封装好api，直接访问即可返回数据，而后者是需要在前端页面中嵌入的地图功能。</p>
+
+        <h3 id="输入提示-JS-API">
+          <a href="#输入提示-JS-API" class="heading-link"><i class="fas fa-link"></i></a><a href="#输入提示-JS-API" class="headerlink" title="输入提示(JS API)"></a>输入提示(<a href="URL" title="https://lbs.amap.com/api/javascript-api-v2/guide/services/autocomplete">JS API</a>)</h3>
+      
+        <h4 id="安装">
+          <a href="#安装" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装" class="headerlink" title="安装"></a>安装</h4>
+      <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @amap/amap-jsapi-loader</span><br></pre></td></tr></table></div></figure>
+
+        <h4 id="引入">
+          <a href="#引入" class="heading-link"><i class="fas fa-link"></i></a><a href="#引入" class="headerlink" title="引入"></a>引入</h4>
+      <p>ES Module:</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">AMapLoader</span> <span class="keyword">from</span> <span class="string">&#x27;@amap/amap-jsapi-loader&#x27;</span></span><br><span class="line"><span class="comment">// 初始化地图时要配置key，和密钥</span></span><br><span class="line"><span class="comment">// 因为我没配置密钥导致我的提示一直不出来，搞了好久才成功</span></span><br><span class="line"><span class="title class_">AMapLoader</span>.<span class="title function_">load</span>(&#123;</span><br><span class="line">  <span class="string">&quot;key&quot;</span>: <span class="string">&quot;你的高德地图API密钥&quot;</span>, <span class="comment">// 请替换成你的高德地图API密钥</span></span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;2.0&quot;</span>, <span class="comment">// API版本号</span></span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: [] <span class="comment">// 需要使用的插件列表</span></span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function">(<span class="params">AMap</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 高德地图API已成功加载，现在可以通过AMap对象进行地图开发了</span></span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(e); <span class="comment">// 加载错误</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在index.html中通过CDN的方式引入</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">     <span class="variable language_">window</span>.<span class="property">_AMapSecurityConfig</span> = &#123;</span><br><span class="line">            <span class="attr">securityJsCode</span>:<span class="string">&#x27;安全密钥&#x27;</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://webapi.amap.com/maps?v=2.0&amp;key=我的key&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://webapi.amap.com/ui/1.1/main.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使得id为inputId的input元素可以实现搜索提示</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">initAutocomplete</span> = (<span class="params">inputId</span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 延迟执行，确保DOM元素已经渲染</span></span><br><span class="line">      <span class="title function_">nextTick</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="title class_">AMap</span>.<span class="title function_">plugin</span>(<span class="string">&#x27;AMap.AutoComplete&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> autoOptions = &#123;</span><br><span class="line">            <span class="attr">input</span>: inputId</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">const</span> autoComplete = <span class="keyword">new</span> <span class="title class_">AMap</span>.<span class="title class_">Autocomplete</span>(autoOptions);</span><br><span class="line">          <span class="comment">//选中某个poi之后的操作，获取poi的经纬度用于后续路径规划</span></span><br><span class="line">          autoComplete.<span class="title function_">on</span>(<span class="string">&#x27;select&#x27;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;select&#x27;</span>, e)</span><br><span class="line">            <span class="keyword">if</span> (inputId === <span class="string">&#x27;tipinput1&#x27;</span>) &#123;</span><br><span class="line">              startPoint.<span class="property">value</span> = e.<span class="property">poi</span>.<span class="property">name</span>;</span><br><span class="line">              startCoor.<span class="property">value</span>.<span class="property">lng</span> = e.<span class="property">poi</span>.<span class="property">location</span>.<span class="property">lng</span>;</span><br><span class="line">              startCoor.<span class="property">value</span>.<span class="property">lat</span> = e.<span class="property">poi</span>.<span class="property">location</span>.<span class="property">lat</span>;</span><br><span class="line">              <span class="comment">// startCity.value = e.poi.sdcode;</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              endPoint.<span class="property">value</span> = e.<span class="property">poi</span>.<span class="property">name</span>;</span><br><span class="line">              endCoor.<span class="property">value</span>.<span class="property">lng</span> = e.<span class="property">poi</span>.<span class="property">location</span>.<span class="property">lng</span>;</span><br><span class="line">              endCoor.<span class="property">value</span>.<span class="property">lat</span> = e.<span class="property">poi</span>.<span class="property">location</span>.<span class="property">lat</span>;</span><br><span class="line">              <span class="comment">// endCity.value = e.poi.adcode ;</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="路径规划-web-服务">
+          <a href="#路径规划-web-服务" class="heading-link"><i class="fas fa-link"></i></a><a href="#路径规划-web-服务" class="headerlink" title="路径规划(web 服务)"></a>路径规划(<a href="URL" title="https://lbs.amap.com/api/webservice/guide/api/direction">web 服务</a>)</h3>
+      <p>只需处理数据，把输入数据根据api要求拼接成想要url即可</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//封装好的axios</span></span><br><span class="line"><span class="keyword">import</span> instance <span class="keyword">from</span> <span class="string">&quot;./outServeRequest.js&quot;</span></span><br><span class="line"><span class="comment">// 访问高德地图api，获取数据;v3有polyline，v5没有</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&#x27;/amap/v3/direction/&#x27;</span></span><br><span class="line"><span class="keyword">const</span> key = <span class="string">&#x27;我的key&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getRoute</span>(<span class="params">routeOpt,originCoor,destinationCoor,</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> routeUrl = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="keyword">if</span> (routeOpt === <span class="string">&#x27;integrated&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">//后面两个city的值是城市的adcode</span></span><br><span class="line">    routeUrl = <span class="string">`<span class="subst">$&#123;url&#125;</span>/transit/<span class="subst">$&#123;routeOpt&#125;</span>?&amp;key=<span class="subst">$&#123;key&#125;</span>&amp;origin=<span class="subst">$&#123;originCoor.lng&#125;</span>,<span class="subst">$&#123;originCoor.lat&#125;</span>&amp;destination=<span class="subst">$&#123;destinationCoor.lng&#125;</span>,<span class="subst">$&#123;destinationCoor.lat&#125;</span>&amp;city=110000&amp;cityd=110000`</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    routeUrl = <span class="string">`<span class="subst">$&#123;url&#125;</span><span class="subst">$&#123;routeOpt&#125;</span>?&amp;key=<span class="subst">$&#123;key&#125;</span>&amp;origin=<span class="subst">$&#123;originCoor.lng&#125;</span>,<span class="subst">$&#123;originCoor.lat&#125;</span>&amp;destination=<span class="subst">$&#123;destinationCoor.lng&#125;</span>,<span class="subst">$&#123;destinationCoor.lat&#125;</span>`</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> routeUrl</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 发起get请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getRouteData</span>(<span class="params">routeOpt,originCoor,destinationCoor</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> routeUrl = <span class="title function_">getRoute</span>(routeOpt,originCoor,destinationCoor)</span><br><span class="line">  <span class="keyword">return</span> instance.<span class="title function_">get</span>(routeUrl)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+<p><strong>使用api时常看控制台的网络服务，看看请求是否发送，响应是什么。如果发生错误可以根据响应代码对照高德地图api提供的<a href="URL" title="https://lbs.amap.com/api/webservice/guide/tools/info">错误代码</a>查看错误类型()</strong></p>
+
+        <h2 id="前后端的跨域问题">
+          <a href="#前后端的跨域问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#前后端的跨域问题" class="headerlink" title="前后端的跨域问题"></a>前后端的跨域问题</h2>
+      <p>后端跨域问题配置，只能解决后端提供的api</p>
+<p>而第三方提供的api修改后端跨域无法解决，由于我用的打包工具时vite，在解决第三方跨域问题时需要配置vite.config.js，设置代理为<code>&#39;/amap&#39;</code>。配置之后前端api访问时的地址也需要更改需要使用代理,<code>&#39;/amap/v3/direction&#39;</code>。</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vite.<span class="property">config</span>.<span class="property">js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">server</span>: &#123;</span><br><span class="line">      <span class="attr">proxy</span>: &#123;</span><br><span class="line">        <span class="comment">// 代理所有到 /amap 的请求到 https://restapi.amap.com</span></span><br><span class="line">        <span class="string">&#x27;/amap&#x27;</span>: &#123;</span><br><span class="line">          <span class="comment">//第三方地址，这里用amap代理了，那么请求的地址就应该时amap开头</span></span><br><span class="line">          <span class="attr">target</span>: <span class="string">&#x27;https://restapi.amap.com&#x27;</span>, <span class="comment">// 目标地址</span></span><br><span class="line">          <span class="attr">changeOrigin</span>: <span class="literal">true</span>, <span class="comment">// 必须设置为true，以便代理服务器发送请求时更改Origin头信息</span></span><br><span class="line">          <span class="attr">rewrite</span>: <span class="function">(<span class="params">path</span>) =&gt;</span> path.<span class="title function_">replace</span>(<span class="regexp">/^\/amap/</span>, <span class="string">&#x27;&#x27;</span>), <span class="comment">// 将请求地址中的 /amap 替换为空，因为实际的API地址中不包含 /amap</span></span><br><span class="line">          <span class="attr">secure</span>: <span class="literal">false</span>,</span><br><span class="line">          <span class="attr">xfwd</span>: <span class="literal">true</span>,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">前端使用代理</span><br><span class="line"><span class="keyword">const</span> url = <span class="string">`/amap/v3/assistant/coordinate/convert?key=<span class="subst">$&#123;key&#125;</span>&amp;locations=<span class="subst">$&#123;locations&#125;</span>&amp;coordsys=gps`</span></span><br><span class="line"></span><br><span class="line">不使用代理前的url为</span><br><span class="line"><span class="string">&#x27;https://restapi.amap.com/v3/assistant/coordinate/...&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h2 id="坐标系转换">
+          <a href="#坐标系转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#坐标系转换" class="headerlink" title="坐标系转换"></a>坐标系转换</h2>
+      <p>高德地图的坐标系和cesium的坐标系是不同的，当然不同数据的坐标系都有差异，我们需要进行坐标系的转换。<br>可以借助现有的库，我用的是gcoord(<span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://github.com/hujiulong/gcoord">https://github.com/hujiulong/gcoord</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>)</p>
+
+        <h3 id="安装-1">
+          <a href="#安装-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3>
+      <p>npm 安装</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gcoord --save</span><br></pre></td></tr></table></div></figure>
+<p>或者直接在页面中通过 script 标签引入:</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;https://unpkg.com/gcoord/dist/gcoord.global.prod.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="引入-1">
+          <a href="#引入-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#引入-1" class="headerlink" title="引入"></a>引入</h3>
+      <p>CommonJS:</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gcoord = <span class="built_in">require</span>(<span class="string">&#x27;gcoord&#x27;</span>);</span><br></pre></td></tr></table></div></figure>
+
+<p>ES Module:</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gcoord <span class="keyword">from</span> <span class="string">&#x27;gcoord&#x27;</span>;</span><br></pre></td></tr></table></div></figure>
+<p>通过 script 标签引入可以直接使用全局变量 gcoord 或 window.gcoord</p>
+
+        <h3 id="transform-API">
+          <a href="#transform-API" class="heading-link"><i class="fas fa-link"></i></a><a href="#transform-API" class="headerlink" title="transform API"></a>transform API</h3>
+      
+        <h4 id="transform-input-from-to">
+          <a href="#transform-input-from-to" class="heading-link"><i class="fas fa-link"></i></a><a href="#transform-input-from-to" class="headerlink" title="transform(input, from, to)"></a>transform(input, from, to)</h4>
+      <p>进行坐标转换</p>
+
+        <h4 id="参数">
+          <a href="#参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#参数" class="headerlink" title="参数"></a>参数</h4>
+      <ul>
+<li><code>input</code> GeoJSON | string | Array<number> GeoJSON对象，或GeoJSON字符串，或经纬度数组</number></li>
+<li><code>from</code> CRS 当前坐标系</li>
+<li><code>to</code> CRS 目标坐标系</li>
+</ul>
+
+        <h4 id="返回值">
+          <a href="#返回值" class="heading-link"><i class="fas fa-link"></i></a><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4>
+      <p>GeoJSON | Array<number></number></p>
+<p>示例</p>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将GCJ02坐标转换为WGS84坐标</span></span><br><span class="line"><span class="keyword">var</span> result = gcoord.<span class="title function_">transform</span>([<span class="number">123</span>, <span class="number">45</span>], gcoord.<span class="property">GCJ02</span>, gcoord.<span class="property">WGS84</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);  <span class="comment">// [122.99395597, 44.99804071]</span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 转换GeoJSON坐标</span></span><br><span class="line"><span class="keyword">var</span> geojson = &#123;</span><br><span class="line">  <span class="string">&quot;type&quot;</span>: <span class="string">&quot;Point&quot;</span>,</span><br><span class="line">  <span class="string">&quot;coordinates&quot;</span>: [<span class="number">123</span>, <span class="number">45</span>]</span><br><span class="line">&#125;</span><br><span class="line">gcoord.<span class="title function_">transform</span>(geojson, gcoord.<span class="property">GCJ02</span>, gcoord.<span class="property">WGS84</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(geojson.<span class="property">coordinates</span>); <span class="comment">// [122.99395597, 44.99804071]</span></span><br></pre></td></tr></table></div></figure>
+<p>返回数组或GeoJSON对象（由输入决定），<strong>注意：当输入为GeoJSON时，transform会改变输入对象</strong></p>
+<p><strong>前一种输入为数组，后一种为一个geojson，geojson的coordinates可以是二维数组</strong></p>
+<p>CRS为坐标系，目标支持以下几种坐标系</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>CRS</th>
+<th>坐标格式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gcoord.WGS84</td>
+<td>[lng,lat]</td>
+<td>WGS-84坐标系，GPS设备获取的经纬度坐标</td>
+</tr>
+<tr>
+<td>gcoord.GCJ02</td>
+<td>[lng,lat]</td>
+<td>GCJ-02坐标系，google中国地图、soso地图、aliyun地图、mapabc地图和高德地图所用的经纬度坐标</td>
+</tr>
+<tr>
+<td>gcoord.BD09</td>
+<td>[lng,lat]</td>
+<td>BD-09坐标系，百度地图采用的经纬度坐标</td>
+</tr>
+<tr>
+<td>gcoord.BD09LL</td>
+<td>[lng,lat]</td>
+<td>同BD09</td>
+</tr>
+<tr>
+<td>gcoord.BD09MC</td>
+<td>[x,y]</td>
+<td>BD-09米制坐标，百度地图采用的米制坐标，单位：米</td>
+</tr>
+<tr>
+<td>gcoord.BD09Meter</td>
+<td>[x,y]</td>
+<td>同BD09MC</td>
+</tr>
+<tr>
+<td>gcoord.Baidu</td>
+<td>[lng,lat]</td>
+<td>百度坐标系，BD-09坐标系别名，同BD-09</td>
+</tr>
+<tr>
+<td>gcoord.BMap</td>
+<td>[lng,lat]</td>
+<td>百度地图，BD-09坐标系别名，同BD-09</td>
+</tr>
+<tr>
+<td>gcoord.AMap</td>
+<td>[lng,lat]</td>
+<td>高德地图，同GCJ-02</td>
+</tr>
+<tr>
+<td>gcoord.WebMercator</td>
+<td>[x,y]</td>
+<td>Web Mercator投影，墨卡托投影，同EPSG3857，单位：米</td>
+</tr>
+<tr>
+<td>gcoord.WGS1984</td>
+<td>[lng,lat]</td>
+<td>WGS-84坐标系别名，同WGS-84</td>
+</tr>
+<tr>
+<td>gcoord.EPSG4326</td>
+<td>[lng,lat]</td>
+<td>WGS-84坐标系别名，同WGS-84</td>
+</tr>
+<tr>
+<td>gcoord.EPSG3857</td>
+<td>[x,y]</td>
+<td>Web Mercator投影，同WebMercator，单位：米</td>
+</tr>
+<tr>
+<td>gcoord.EPSG900913</td>
+<td>[x,y]</td>
+<td>Web Mercator投影，同WebMercator，单位：米</td>
+</tr>
+</tbody></table></div>
+
+        <h2 id="具体实现">
+          <a href="#具体实现" class="heading-link"><i class="fas fa-link"></i></a><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2>
+      
+        <h2 id="踩坑总结">
+          <a href="#踩坑总结" class="heading-link"><i class="fas fa-link"></i></a><a href="#踩坑总结" class="headerlink" title="踩坑总结"></a>踩坑总结</h2>
+      </div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/07/19/algrithm/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-07-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-07-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h1 id="二叉树">
           <a href="#二叉树" class="heading-link"><i class="fas fa-link"></i></a><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1>
       
@@ -781,108 +1032,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 7.3.0"></he
 </blockquote>
 <p><img src="/../../images/b08ba20dddfd5104c363030b5e897b31b2d15aff0f20adc3c2d37f56b87a0fa6.png" alt="图 0"></p>
 <figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> readline = <span class="built_in">require</span>(<span class="string">&#x27;readline&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> rl = readline.<span class="title function_">createInterface</span>(&#123;</span><br><span class="line">    <span class="attr">input</span>:process.<span class="property">stdin</span>,</span><br><span class="line">    <span class="attr">output</span>:process.<span class="property">stdout99</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">let</span> inputArr = []</span><br><span class="line">rl.<span class="title function_">on</span>(<span class="string">&#x27;line&#x27;</span>,<span class="keyword">function</span>(<span class="params">line</span>)&#123;</span><br><span class="line">    inputArr.<span class="title function_">push</span>(line.<span class="title function_">split</span>(<span class="string">&#x27; &#x27;</span>))</span><br><span class="line">&#125;).<span class="title function_">on</span>(<span class="string">&#x27;close&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> n = <span class="built_in">parseInt</span>(inputArr[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">let</span> m = <span class="built_in">parseInt</span>(inputArr[<span class="number">0</span>][<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">let</span> w = inputArr[<span class="number">1</span>].<span class="title function_">map</span>(<span class="title class_">Number</span>)</span><br><span class="line">    <span class="keyword">let</span> v = inputArr[<span class="number">2</span>].<span class="title function_">map</span>(<span class="title class_">Number</span>)</span><br><span class="line">    <span class="keyword">let</span> num = inputArr[<span class="number">3</span>].<span class="title function_">map</span>(<span class="title class_">Number</span>)</span><br><span class="line">    <span class="keyword">let</span> dp = <span class="title class_">Array</span>(n+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="comment">//遍历物品</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">      <span class="comment">//背包</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = n;j&gt;=w[i];j--)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> k=<span class="number">1</span>;k&lt;=num[i] &amp;&amp; k*w[i]&lt;=j;k++)&#123;</span><br><span class="line">                dp[j] = <span class="title class_">Math</span>.<span class="title function_">max</span>(dp[j],dp[j-w[i]*k]+v[i]*k)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(dp[n])</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2024/05/26/algrithm/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2024-05-26</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2024-06-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h1 id="动态规划">
-          <a href="#动态规划" class="heading-link"><i class="fas fa-link"></i></a><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1>
-      
-        <h2 id="动态规划基础">
-          <a href="#动态规划基础" class="heading-link"><i class="fas fa-link"></i></a><a href="#动态规划基础" class="headerlink" title="动态规划基础"></a>动态规划基础</h2>
-      <p>动态规划，英文：Dynamic Programming，简称DP，如果某一问题有很多重叠子问题，使用动态规划是最有效的。</p>
-<div style="background-color:#D2F0F4; color:black;padding:5px;border-radius:5px;"> 动态规划五部曲 </div>
-
-<ul>
-<li>1、dp数组及其下标得含义</li>
-<li>2、递推公式</li>
-<li>3、dp数组如何初始化呢</li>
-<li>4、遍历顺序</li>
-<li>5、打印dp数组，为了查错。</li>
-</ul>
-
-        <h2 id="基础题目">
-          <a href="#基础题目" class="heading-link"><i class="fas fa-link"></i></a><a href="#基础题目" class="headerlink" title="基础题目"></a>基础题目</h2>
-      
-        <h3 id="斐波那契数">
-          <a href="#斐波那契数" class="heading-link"><i class="fas fa-link"></i></a><a href="#斐波那契数" class="headerlink" title="斐波那契数"></a>斐波那契数</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/fibonacci-number/description/">https://leetcode.cn/problems/fibonacci-number/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/01ae88554119b3f889e55d1eee58803122db2db04ea4e5a44272089280f61c19.png" alt="图 0"></p>
-
-        <h3 id="思路">
-          <a href="#思路" class="heading-link"><i class="fas fa-link"></i></a><a href="#思路" class="headerlink" title="思路"></a>思路</h3>
-      <ul>
-<li>1、dp数组表示什么，dp[i]：第i个斐波那契数的数值</li>
-<li>2、递推公式：dp[i] &#x3D; dp[i-2] + dp[i-1]</li>
-<li>3、dp数组初始化：dp[0] &#x3D; 1,dp[1] &#x3D; 1</li>
-<li>4、遍历顺序：i从2遍历到n</li>
-</ul>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fib = <span class="keyword">function</span> (<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> dp = <span class="keyword">new</span> <span class="title class_">Array</span>(n)</span><br><span class="line">  dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">  dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="爬楼梯">
-          <a href="#爬楼梯" class="heading-link"><i class="fas fa-link"></i></a><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/description/">https://leetcode.cn/problems/climbing-stairs/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/9663ce6f69c8d4c7771f741f79648e2cae3932dab391f98185e3ceb6cada5a41.png" alt="图 1"></p>
-<p><strong>五部曲解释</strong><br>1、dp数组表示的是，到达第i+1个台阶的方法数<br>2、递推公式dp[i] &#x3D; dp[i-2] + dp[i-1]<br>3、dp数组初始化，dp[0] &#x3D; 1,dp[1] &#x3D; 2; 上一个台阶一种方法，两个台阶两种方法<br>4、遍历顺序从2~n-1</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> climbStairs = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> dp=[]</span><br><span class="line">  dp[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">  dp[<span class="number">1</span>] = <span class="number">2</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">2</span>;i&lt;n;i++)&#123;</span><br><span class="line">    dp[i] = dp[i-<span class="number">1</span>]+dp[i-<span class="number">2</span>]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n-<span class="number">1</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="使用最小花费爬楼梯">
-          <a href="#使用最小花费爬楼梯" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用最小花费爬楼梯" class="headerlink" title="使用最小花费爬楼梯"></a>使用最小花费爬楼梯</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-cost-climbing-stairs/description/">https://leetcode.cn/problems/min-cost-climbing-stairs/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/5943d6b5ed2503039758190177210ef53582aba91ff956c76acddfb9efa90a97.png" alt="图 2"></p>
-<p><strong>五部曲</strong><br>1、dp数组，代表到达位置i时消耗的花费<br>2、递推公式 dp[i] &#x3D; dp[i-1]+cost[i-1]或者dp[i] &#x3D; dp[i-2]+cost[i-2]，<br>  dp[i] &#x3D; min(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2])<br>3、初始化，dp[0]&#x3D;0;dp[1]&#x3D;0，因为题意明确到达台阶不想上跳是没有花费的。而dp数组的含义是到达位置i的花费，所以dp[0]，dp[1]初始化都是0<br>4、遍历：n是cost长度，顶部在n+1的位置</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> minCostClimbingStairs = <span class="keyword">function</span>(<span class="params">cost</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> dp = []</span><br><span class="line">  dp[<span class="number">0</span>]=<span class="number">0</span>,dp[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">  n = cost.<span class="property">length</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    dp[i] = <span class="title class_">Math</span>.<span class="title function_">min</span>(dp[i-<span class="number">1</span>] + cost[i-<span class="number">1</span>],dp[i-<span class="number">2</span>] + cost[i-<span class="number">2</span>])</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-        <h3 id="不同路径">
-          <a href="#不同路径" class="heading-link"><i class="fas fa-link"></i></a><a href="#不同路径" class="headerlink" title="不同路径"></a>不同路径</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths/description/">https://leetcode.cn/problems/unique-paths/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/b4ad29a33821a889d530113de77f8defa2fdaa1dc5bb6ec751fcfabbcfa5b5b0.png" alt="图 3"></p>
-<p><strong>五部曲</strong><br>1、dp[i][j],从0，0，走到i，j的走法。<br>2、dp[i][j] &#x3D; dp[i-1][j] + dp[i][j-1]<br>3、初始化：dp[0][j] &#x3D; 1;dp[i][0] &#x3D; 1<br>4、遍历：<br>5、</p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uniquePaths = <span class="keyword">function</span> (<span class="params">m, n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>(m).<span class="title function_">fill</span>().<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) dp[i][<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) dp[<span class="number">0</span>][i] = <span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">      dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="不同路径II">
-          <a href="#不同路径II" class="heading-link"><i class="fas fa-link"></i></a><a href="#不同路径II" class="headerlink" title="不同路径II"></a>不同路径II</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths-ii/description/">https://leetcode.cn/problems/unique-paths-ii/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/daedea27b3b34f0f3f2dc3918470558e95ddeb6e144825cc9d4c4ee71bc9f157.png" alt="图 4"></p>
-<p>有障碍物的地方路径数量设为0即可解决</p>
-<p><strong>五部曲</strong><br>1、dp数组及下标含义：<code>dp[i][j]</code>表示到达i，j的路径数量<br>2、递推公式：如果i，j处有障碍，<code>dp[i][j]=0</code>，没有障碍<code>dp[i][j] = dp[i-1][j] + dp[i][j-1]</code><br>3、初始化,dp数组全部填充为0，dp[0][0] &#x3D; 1<br>4、遍历方法，<code>i:0~m</code> <code>j:0~n</code>,这种遍历方式要搭配<code>if(i &gt; 0) dp[i][j] += dp[i-1][j];</code><br>       <code>if(j &gt; 0) dp[i][j] += dp[i][j-1];</code></p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uniquePathsWithObstacles = <span class="keyword">function</span>(<span class="params">obstacleGrid</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> m = obstacleGrid.<span class="property">length</span>,n=obstacleGrid[<span class="number">0</span>].<span class="property">length</span></span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>(m).<span class="title function_">fill</span>().<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">0</span>))</span><br><span class="line">  dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (obstacleGrid[i][j] == <span class="number">1</span>) dp[i][j]=<span class="number">0</span></span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(i &gt; <span class="number">0</span>) dp[i][j] += dp[i-<span class="number">1</span>][j];</span><br><span class="line">       <span class="keyword">if</span>(j &gt; <span class="number">0</span>) dp[i][j] += dp[i][j-<span class="number">1</span>];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="整数拆分">
-          <a href="#整数拆分" class="heading-link"><i class="fas fa-link"></i></a><a href="#整数拆分" class="headerlink" title="整数拆分"></a>整数拆分</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/integer-break/description/">https://leetcode.cn/problems/integer-break/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/0973eeab5f164bc32658df7db791e2f9168c7c3f99d952b2af1b78f751790f8a.png" alt="图 5"></p>
-<p><strong>五部曲</strong><br>1、dp数组及其下标的含义：dp[i]表示i拆分的最大值。<br>2、递推公式：<br><img src="/../../images/2705140cd07af477d10403287ff634282fc5501376557f23b3864348d7af5bd9.png" alt="图 6"></p>
-<p>3、初始化：dp[2] &#x3D; 1,其余均为0<br>4、遍历顺序：按顺序拆，一定拆出1，拆能两个数和多个数；一定拆除2，拆出两个数和多个数…，求每一次拆的最大值。<br><img src="/../../images/4dab8ae9788c244aee65f25e65dc6bfdcada45ccdd33abeef3d12ed5576e1f8e.png" alt="图 7"></p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> integerBreak = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>(n+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>)  <span class="comment">//n+1因为dp数组下标的含义</span></span><br><span class="line">  dp[<span class="number">2</span>]=<span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;= <span class="title class_">Math</span>.<span class="title function_">floor</span>(i/<span class="number">2</span>);j++)&#123;</span><br><span class="line">      dp[i] = <span class="title class_">Math</span>.<span class="title function_">max</span>(j*(i-j),j*dp[i-j],dp[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="不同的二叉搜索树">
-          <a href="#不同的二叉搜索树" class="heading-link"><i class="fas fa-link"></i></a><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h3>
-      <blockquote>
-<p><span class="exturl"><a class="exturl__link" target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-binary-search-trees/description/">https://leetcode.cn/problems/unique-binary-search-trees/description/</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
-</blockquote>
-<p><img src="/../../images/4be27ebd4649f009fa052403e16f156e0fcf1250222b86c31ba631cd1eb182b1.png" alt="图 8"></p>
-
-        <h4 id="二叉搜索树">
-          <a href="#二叉搜索树" class="heading-link"><i class="fas fa-link"></i></a><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h4>
-      <p><img src="/../../images/5d1850b0b802c05b36ab40ea50315b37325ba0c6b60f8bff347de151ed0b5ced.png" alt="图 9"></p>
-<p><strong>五部曲</strong><br>1、<code>dp[i]</code> 表示i个结点的二叉搜索数的个数<br>2、递推公式:<code>dp[i] += dp[j-1] * dp[i-j]</code><br>当头结点为j时，<strong>左边一定有j-1个结点</strong>。</p>
-<p>3、初始化：<code>dp[0] = 1</code>, <code>dp[1] = 1</code>, <code>dp[2]=2</code><br>4、遍历顺序，第一层for循环负责遍历dp[i]的下标，第二个for循环遍历<strong>头节点的数值</strong><br><img src="/../../images/e0e2ae62ca4e224974883f439e9ca45f611b2258cf1b021880b79f55e185e9f3.png" alt="图 10"></p>
-<figure class="highlight js"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numTrees = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> dp = <span class="title class_">Array</span>(n+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line">  dp[<span class="number">0</span>]=<span class="number">1</span>,dp[<span class="number">1</span>]=<span class="number">1</span>,dp[<span class="number">2</span>]=<span class="number">2</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=i;j++)&#123;</span><br><span class="line">      dp[i] += dp[j-<span class="number">1</span>]*dp[i-j]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></div></figure></div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">GaoNana</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GnanaN/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/weixin_43562106" target="_blank" rel="noopener" data-popover="social.CSDN" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="mailto:nana_ga@126.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">72</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">25</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">55</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GaoNana</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v7.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script>function initSearch() {
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">GaoNana</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/GnanaN/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://blog.csdn.net/weixin_43562106" target="_blank" rel="noopener" data-popover="social.CSDN" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-telegram"></i></span></a><a class="sidebar-ov-social-item" href="mailto:nana_ga@126.com" target="_blank" rel="noopener" data-popover="social.email" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fas fa-envelope"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">73</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">25</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">56</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-cn" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2024</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>GaoNana</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v7.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.8.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.json';
 
